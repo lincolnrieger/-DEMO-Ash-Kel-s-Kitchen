@@ -23,12 +23,16 @@ body{font-family:"Lato",sans-serif;background:var(--cream);color:var(--ink);-web
 img{max-width:100%;display:block;}
 a{color:inherit;text-decoration:none;}
 button{font-family:inherit;cursor:pointer;border:none;background:none;}
+
+/* ── EYEBROW ── */
 .eyebrow{font-size:.68rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--red);display:flex;align-items:center;gap:.55rem;}
 .eyebrow::before{content:"";width:20px;height:1.5px;background:var(--red);flex-shrink:0;}
 .eyebrow.center{justify-content:center;}
 .eyebrow.center::before{display:none;}
 .eyebrow.light{color:rgba(255,255,255,.5);}
 .eyebrow.light::before{background:rgba(255,255,255,.35);}
+
+/* ── HEADER ── */
 header{position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(250,247,242,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}
 .header-wrap{max-width:1300px;margin:0 auto;padding:0 2rem;height:70px;display:flex;align-items:center;justify-content:space-between;gap:2rem;}
 .logo-wrap{flex-shrink:0;display:flex;align-items:center;}
@@ -41,6 +45,23 @@ header{position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(250,247,2
 .nav-btn.cta{margin-left:.75rem;background:var(--red);color:var(--white)!important;padding:.55rem 1.25rem;border-radius:3px;}
 .nav-btn.cta:hover{background:var(--red-dk);}
 .nav-btn.cta.is-active::after{display:none;}
+
+/* ── HAMBURGER ── */
+.hamburger{display:none;align-items:center;justify-content:center;width:40px;height:40px;border-radius:4px;color:var(--ink);transition:background .2s;}
+.hamburger:hover{background:var(--linen);}
+
+/* ── MOBILE DRAWER ── */
+.mobile-nav{display:none;position:fixed;top:70px;left:0;right:0;bottom:0;z-index:998;background:var(--cream);transform:translateX(100%);transition:transform .3s cubic-bezier(.4,0,.2,1);overflow-y:auto;}
+.mobile-nav.is-open{transform:translateX(0);}
+.mobile-nav-inner{padding:1.5rem 1.5rem 3rem;}
+.mobile-nav-item{display:block;width:100%;text-align:left;padding:1rem .75rem;font-size:1rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--stone);border-bottom:1px solid var(--border);border-radius:4px;transition:color .2s,background .2s;}
+.mobile-nav-item:hover,.mobile-nav-item.is-active{color:var(--red);background:var(--linen);}
+.mobile-nav-item.cta-mobile{margin-top:1.5rem;background:var(--red);color:var(--white)!important;border-bottom:none;border-radius:4px;text-align:center;}
+.mobile-nav-item.cta-mobile:hover{background:var(--red-dk);}
+.mobile-overlay{display:none;position:fixed;top:70px;left:0;right:0;bottom:0;z-index:997;background:rgba(0,0,0,.35);}
+.mobile-overlay.is-open{display:block;}
+
+/* ── PAGES ── */
 .page{display:none;min-height:100vh;padding-top:70px;}
 .page.is-active{display:block;}
 .page.is-active .anim-in{animation:fadeUp .55s ease both;}
@@ -50,12 +71,16 @@ header{position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(250,247,2
 .page.is-active .anim-in:nth-child(4){animation-delay:.29s;}
 .page.is-active .anim-in:nth-child(5){animation-delay:.37s;}
 @keyframes fadeUp{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
+
+/* ── BUTTONS ── */
 .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.78rem 1.7rem;font-size:.73rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border-radius:3px;transition:all .22s;cursor:pointer;border:none;font-family:"Lato",sans-serif;}
 .btn-red{background:var(--red);color:var(--white);}
 .btn-red:hover{background:var(--red-dk);transform:translateY(-2px);box-shadow:0 8px 22px rgba(193,27,46,.28);}
 .btn-outline{background:transparent;color:var(--ink);border:1.5px solid var(--border);}
 .btn-outline:hover{border-color:var(--ink);transform:translateY(-2px);}
 .btn svg{width:14px;height:14px;flex-shrink:0;}
+
+/* ── LAYOUT ── */
 .container{max-width:1240px;margin:0 auto;padding:0 2rem;}
 .section{padding:6rem 0;}
 .section-sm{padding:3.5rem 0;}
@@ -65,6 +90,8 @@ header{position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(250,247,2
 .section-h2 em{font-style:italic;color:var(--red);}
 .section-sub{margin-top:.9rem;font-size:.95rem;font-weight:300;line-height:1.85;color:var(--stone);max-width:520px;}
 .section-sub.center{margin-left:auto;margin-right:auto;text-align:center;}
+
+/* ── HERO ── */
 .hero{display:grid;grid-template-columns:1fr 1fr;min-height:calc(100vh - 70px);overflow:hidden;}
 .hero-left{display:flex;flex-direction:column;justify-content:center;padding:5rem 4rem 5rem 6rem;background:var(--cream);}
 .hero-tagline{font-size:.7rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--red);display:flex;align-items:center;gap:.6rem;margin-bottom:1.8rem;}
@@ -79,16 +106,26 @@ header{position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(250,247,2
 .hero-right{position:relative;background:var(--black);overflow:hidden;}
 .hero-photo-single{position:absolute;inset:0;background:url("group_photo.png") center/cover no-repeat;filter:brightness(.8) saturate(.95);}
 .hero-scrim{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 55%,rgba(10,5,3,.45) 100%);}
+
+/* ── WHY STRIP ── */
 .why-strip{background:var(--charcoal);padding:4.5rem 0;}
 .why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.08);border-radius:6px;overflow:hidden;}
 .why-item{padding:2.25rem 1.75rem;background:var(--charcoal);transition:background .25s;}
 .why-item:hover{background:#333;}
+.why-icon{margin-bottom:.85rem;color:var(--red);}
+.why-icon svg{width:22px;height:22px;stroke:var(--red);stroke-width:1.75;fill:none;stroke-linecap:round;stroke-linejoin:round;}
 .why-title{font-family:"Playfair Display",serif;font-size:1.05rem;font-weight:700;color:var(--white);margin-bottom:.5rem;}
 .why-body{font-size:.84rem;font-weight:300;line-height:1.8;color:rgba(255,255,255,.55);}
+
+/* ── EVENTS ── */
 .events-section{background:var(--linen);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
 .events-chips{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem;}
 .chip{display:flex;align-items:center;gap:.5rem;padding:.5rem 1.1rem;background:var(--white);border:1px solid var(--border);border-radius:40px;font-size:.82rem;font-weight:400;color:var(--ink);transition:all .2s;cursor:default;}
+.chip svg{width:14px;height:14px;flex-shrink:0;stroke:var(--dust);stroke-width:1.75;fill:none;stroke-linecap:round;stroke-linejoin:round;transition:stroke .2s;}
 .chip:hover{border-color:var(--red);color:var(--red);transform:translateY(-2px);box-shadow:var(--shadow-sm);}
+.chip:hover svg{stroke:var(--red);}
+
+/* ── MENU ── */
 .menu-hero{background:var(--charcoal);padding:5rem 0;text-align:center;background-image:radial-gradient(circle at 80% 20%,rgba(193,27,46,.12) 0%,transparent 55%),radial-gradient(circle at 20% 80%,rgba(193,27,46,.08) 0%,transparent 50%);}
 .menu-hero h1{font-family:"Playfair Display",serif;font-size:clamp(2.4rem,4vw,4rem);font-weight:700;color:var(--white);line-height:1.1;}
 .menu-hero h1 em{font-style:italic;color:var(--red-lt);}
@@ -99,16 +136,20 @@ header{position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(250,247,2
 .menu-card-stripe{height:4px;background:var(--red);}
 .menu-card.alt .menu-card-stripe{background:var(--warm);}
 .menu-card-body{padding:2.25rem;}
-.menu-cat{font-size:.66rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:.5rem;}
+.menu-cat{font-size:.66rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:.5rem;display:flex;align-items:center;gap:.4rem;}
+.menu-cat svg{width:13px;height:13px;stroke:var(--red);stroke-width:1.75;fill:none;stroke-linecap:round;stroke-linejoin:round;}
 .menu-card.alt .menu-cat{color:var(--stone);}
+.menu-card.alt .menu-cat svg{stroke:var(--stone);}
 .menu-title{font-family:"Playfair Display",serif;font-size:1.5rem;font-weight:700;color:var(--charcoal);margin-bottom:.7rem;}
 .menu-desc{font-size:.87rem;font-weight:300;line-height:1.82;color:var(--stone);margin-bottom:1.75rem;}
 .menu-link{display:inline-flex;align-items:center;gap:.5rem;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--red);transition:gap .2s;}
 .menu-link:hover{gap:.9rem;}
-.menu-link svg{width:12px;height:12px;}
+.menu-link svg{width:14px;height:14px;stroke:var(--red);stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round;}
 .menu-note{max-width:1000px;margin:0 auto;padding:0 2rem 5rem;}
 .menu-note-box{background:var(--linen);border:1px solid var(--border);border-radius:8px;padding:1.6rem 2rem;font-size:.87rem;font-weight:300;line-height:1.85;color:var(--stone);text-align:center;font-style:italic;}
 .menu-note-box a{color:var(--red);font-weight:600;font-style:normal;}
+
+/* ── ABOUT ── */
 .about-hero{background:var(--charcoal);padding:5.5rem 0;background-image:radial-gradient(circle at 70% 50%,rgba(193,27,46,.1) 0%,transparent 60%);}
 .about-hero h1{font-family:"Playfair Display",serif;font-size:clamp(2.5rem,4.5vw,4.2rem);font-weight:700;color:var(--white);line-height:1.08;margin-top:.6rem;}
 .about-hero h1 em{font-style:italic;color:var(--red-lt);}
@@ -124,8 +165,11 @@ blockquote.pull p{font-family:"Playfair Display",serif;font-style:italic;font-si
 .team-photo-fb{width:108px;height:148px;display:flex;align-items:center;justify-content:center;background:var(--linen);font-size:2.5rem;}
 .team-info{padding:1.4rem 1.6rem;}
 .team-name{font-family:"Playfair Display",serif;font-size:1.15rem;font-weight:700;color:var(--charcoal);}
-.team-role{font-size:.66rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--red);margin:.15rem 0 .75rem;}
+.team-role{font-size:.66rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--red);margin:.15rem 0 .75rem;display:flex;align-items:center;gap:.35rem;}
+.team-role svg{width:12px;height:12px;stroke:var(--red);stroke-width:1.75;fill:none;stroke-linecap:round;stroke-linejoin:round;}
 .team-bio{font-size:.84rem;font-weight:300;line-height:1.8;color:var(--stone);}
+
+/* ── CATERING ── */
 .catering-hero{background:var(--red);padding:5rem 0;background-image:radial-gradient(circle at 85% 30%,rgba(255,255,255,.08) 0%,transparent 55%);text-align:center;}
 .catering-hero h1{font-family:"Playfair Display",serif;font-size:clamp(2.4rem,4vw,4rem);font-weight:700;color:var(--white);line-height:1.1;}
 .catering-hero h1 em{font-style:italic;}
@@ -133,7 +177,8 @@ blockquote.pull p{font-family:"Playfair Display",serif;font-style:italic;font-si
 .event-types-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:3rem;}
 .event-type-card{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:2rem 1.75rem;transition:transform .25s,box-shadow .25s;}
 .event-type-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);}
-.etc-icon{margin-bottom:.9rem;}
+.etc-icon{margin-bottom:.9rem;display:flex;align-items:center;}
+.etc-icon svg{width:26px;height:26px;stroke:var(--red);stroke-width:1.5;fill:none;stroke-linecap:round;stroke-linejoin:round;}
 .etc-title{font-family:"Playfair Display",serif;font-size:1.05rem;font-weight:700;color:var(--charcoal);margin-bottom:.4rem;}
 .etc-body{font-size:.84rem;font-weight:300;line-height:1.78;color:var(--stone);}
 .catering-how{background:var(--linen);padding:5rem 0;border-top:1px solid var(--border);}
@@ -145,13 +190,16 @@ blockquote.pull p{font-family:"Playfair Display",serif;font-style:italic;font-si
 .catering-cta{background:var(--charcoal);padding:5rem 0;text-align:center;}
 .catering-cta h2{font-family:"Playfair Display",serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;color:var(--white);line-height:1.15;margin-top:.6rem;}
 .catering-cta p{margin:.9rem auto 2rem;font-size:.95rem;font-weight:300;color:rgba(255,255,255,.55);max-width:480px;line-height:1.85;}
+
+/* ── CONTACT ── */
 .contact-layout{display:grid;grid-template-columns:1fr 1.3fr;gap:5rem;align-items:start;padding:6rem 0;}
 .contact-left h1{font-family:"Playfair Display",serif;font-size:clamp(2rem,3vw,3rem);font-weight:700;line-height:1.1;color:var(--charcoal);margin:.5rem 0 1rem;}
 .contact-left h1 em{font-style:italic;color:var(--red);}
 .contact-left > p{font-size:.95rem;font-weight:300;line-height:1.9;color:var(--stone);margin-bottom:2.5rem;}
 .contact-list{display:flex;flex-direction:column;gap:.9rem;}
 .contact-item{display:flex;align-items:center;gap:.9rem;}
-.contact-dot{width:40px;height:40px;flex-shrink:0;background:var(--red);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.9rem;color:var(--white);}
+.contact-dot{width:40px;height:40px;flex-shrink:0;background:var(--red);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--white);}
+.contact-dot svg{width:16px;height:16px;stroke:var(--white);stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round;}
 .contact-text strong{display:block;font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--dust);margin-bottom:.1rem;}
 .contact-text a,.contact-text span{font-size:.92rem;color:var(--ink);}
 .contact-text a{color:var(--red);font-weight:600;}
@@ -166,15 +214,19 @@ blockquote.pull p{font-family:"Playfair Display",serif;font-style:italic;font-si
 .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--red);box-shadow:0 0 0 3px rgba(193,27,46,.09);background:var(--white);}
 .form-group textarea{resize:vertical;min-height:105px;}
 .form-group select{cursor:pointer;}
-.btn-submit{width:100%;padding:.9rem;background:var(--red);color:var(--white);border:none;border-radius:5px;font-family:"Lato",sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:background .2s,transform .15s,box-shadow .2s;}
+.btn-submit{width:100%;padding:.9rem;background:var(--red);color:var(--white);border:none;border-radius:5px;font-family:"Lato",sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:background .2s,transform .15s,box-shadow .2s;display:flex;align-items:center;justify-content:center;gap:.5rem;}
+.btn-submit svg{width:15px;height:15px;stroke:var(--white);stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round;}
 .btn-submit:hover{background:var(--red-dk);transform:translateY(-2px);box-shadow:0 8px 22px rgba(193,27,46,.28);}
 .btn-submit:disabled{opacity:.6;cursor:not-allowed;transform:none;box-shadow:none;}
 .form-error{display:none;background:rgba(193,27,46,.07);border:1px solid rgba(193,27,46,.25);border-radius:5px;padding:.75rem 1rem;font-size:.83rem;color:var(--red);margin-bottom:1rem;text-align:center;}
 .form-success{display:none;text-align:center;padding:3rem 1rem;}
-.success-check{width:60px;height:60px;background:rgba(193,27,46,.09);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.6rem;margin:0 auto 1.3rem;}
+.success-check{width:60px;height:60px;background:rgba(193,27,46,.09);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1.3rem;color:var(--red);}
+.success-check svg{width:28px;height:28px;stroke:var(--red);stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round;}
 .form-success h3{font-family:"Playfair Display",serif;font-size:1.6rem;font-weight:700;color:var(--charcoal);}
 .form-success p{font-size:.9rem;font-weight:300;color:var(--stone);line-height:1.8;margin-top:.5rem;}
 .form-success a{color:var(--red);font-weight:600;}
+
+/* ── ORDER ── */
 .order-hero{background:var(--cream);border-bottom:1px solid var(--border);padding:5rem 0;text-align:center;}
 .order-hero h1{font-family:"Playfair Display",serif;font-size:clamp(2.4rem,4vw,4rem);font-weight:700;color:var(--charcoal);line-height:1.1;}
 .order-hero h1 em{font-style:italic;color:var(--red);}
@@ -182,10 +234,13 @@ blockquote.pull p{font-family:"Playfair Display",serif;font-style:italic;font-si
 .order-options{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;padding:5rem 0;}
 .order-card{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:2.5rem 2rem;text-align:center;transition:transform .25s,box-shadow .25s;}
 .order-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg);}
-.order-card-icon{font-size:2rem;margin-bottom:1.1rem;}
+.order-card-icon{display:flex;justify-content:center;margin-bottom:1.1rem;}
+.order-card-icon svg{width:32px;height:32px;stroke:var(--red);stroke-width:1.5;fill:none;stroke-linecap:round;stroke-linejoin:round;}
 .order-card h3{font-family:"Playfair Display",serif;font-size:1.2rem;font-weight:700;color:var(--charcoal);margin-bottom:.5rem;}
 .order-card p{font-size:.85rem;font-weight:300;line-height:1.8;color:var(--stone);margin-bottom:1.75rem;}
 .order-card .badge{display:inline-block;padding:.25rem .75rem;border-radius:20px;font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:rgba(193,27,46,.09);color:var(--red);margin-bottom:1.4rem;}
+
+/* ── FOOTER ── */
 footer{background:var(--black);}
 .footer-main{display:grid;grid-template-columns:auto 1fr auto;gap:2.5rem;align-items:center;padding:2.75rem 2rem;max-width:1240px;margin:0 auto;}
 .footer-logo img{height:48px;width:auto;mix-blend-mode:screen;opacity:.82;}
@@ -196,6 +251,8 @@ footer{background:var(--black);}
 .footer-strip{border-top:1px solid rgba(255,255,255,.06);max-width:1240px;margin:0 auto;padding:1.4rem 2rem;display:flex;gap:2rem;flex-wrap:wrap;justify-content:center;}
 .footer-strip a,.footer-strip span{font-size:.8rem;color:rgba(255,255,255,.38);transition:color .2s;}
 .footer-strip a:hover{color:rgba(255,255,255,.72);}
+
+/* ── RESPONSIVE ── */
 @media(max-width:1024px){
   .why-grid{grid-template-columns:1fr 1fr;}
   .event-types-grid{grid-template-columns:1fr 1fr;}
@@ -205,16 +262,23 @@ footer{background:var(--black);}
 @media(max-width:768px){
   .header-wrap{padding:0 1.25rem;}
   .nav-list{display:none;}
+  .hamburger{display:flex;}
+  .mobile-nav{display:block;}
   .hero{grid-template-columns:1fr;}
   .hero-left{padding:3rem 1.5rem;}
   .hero-right{height:56vw;min-height:240px;}
-  .about-grid,.contact-layout,.menu-cards{grid-template-columns:1fr;gap:2.5rem;padding:3rem 0;}
+  .about-grid,.contact-layout{grid-template-columns:1fr;gap:2.5rem;padding:3rem 0;}
+  .menu-cards{grid-template-columns:1fr;gap:1.25rem;padding:3rem 1.25rem;}
   .why-grid,.event-types-grid,.how-steps,.order-options{grid-template-columns:1fr;}
   .footer-main{grid-template-columns:1fr;gap:1.5rem;text-align:center;}
   .footer-copy{text-align:center;}
   .container{padding:0 1.25rem;}
   .form-row{grid-template-columns:1fr;}
   .section{padding:3.5rem 0;}
+  .hero-kpi{gap:1.5rem;}
+  .hero-left{padding:2.5rem 1.25rem;}
+  .order-options{grid-template-columns:1fr;padding:3rem 0;}
+  .catering-cta{padding:3.5rem 0;}
 }
 </style>
 </head>
@@ -234,12 +298,32 @@ footer{background:var(--black);}
         <li><button class="nav-btn" data-page="contact">Contact</button></li>
         <li><button class="nav-btn cta" data-page="order">Order Online</button></li>
       </ul>
+      <!-- Hamburger for mobile -->
+      <button class="hamburger" id="hamburger-btn" aria-label="Open menu">
+        <svg id="ham-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
     </nav>
   </div>
 </header>
 
-  
-<!-- HOME -->
+<!-- Mobile nav drawer -->
+<div class="mobile-overlay" id="mobile-overlay"></div>
+<div class="mobile-nav" id="mobile-nav">
+  <div class="mobile-nav-inner">
+    <button class="mobile-nav-item is-active" data-page="home">Home</button>
+    <button class="mobile-nav-item" data-page="menu">Menu</button>
+    <button class="mobile-nav-item" data-page="about">About Us</button>
+    <button class="mobile-nav-item" data-page="catering">Catering &amp; Events</button>
+    <button class="mobile-nav-item" data-page="contact">Contact</button>
+    <button class="mobile-nav-item cta-mobile" data-page="order">Order Online</button>
+  </div>
+</div>
+
+<!-- ══ HOME ══ -->
 <div class="page is-active" id="page-home">
   <section class="hero">
     <div class="hero-left">
@@ -268,18 +352,34 @@ footer{background:var(--black);}
     <div class="container">
       <div class="why-grid">
         <div class="why-item">
+          <div class="why-icon">
+            <!-- Lucide: leaf -->
+            <svg viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
+          </div>
           <div class="why-title">Local &amp; Fresh</div>
           <p class="why-body">We source from local Adelaide Hills suppliers — the freshest ingredients, straight to your event.</p>
         </div>
         <div class="why-item">
+          <div class="why-icon">
+            <!-- Lucide: chef-hat -->
+            <svg viewBox="0 0 24 24"><path d="M6 13.87A4 4 0 0 1 7.41 6a5.11 5.11 0 0 1 1.05-1.54 5 5 0 0 1 7.08 0A5.11 5.11 0 0 1 16.59 6 4 4 0 0 1 18 13.87V21H6Z"/><line x1="6" y1="17" x2="18" y2="17"/><line x1="6" y1="21" x2="18" y2="21"/></svg>
+          </div>
           <div class="why-title">Professionally Trained</div>
           <p class="why-body">Ashley's decade of experience in Adelaide's top kitchens guarantees quality in every dish.</p>
         </div>
         <div class="why-item">
+          <div class="why-icon">
+            <!-- Lucide: scroll-text -->
+            <svg viewBox="0 0 24 24"><path d="M8 21h12a2 2 0 0 0 2-2v-2H10v2a2 2 0 1 1-4 0V5a2 2 0 1 0-4 0v3h4"/><path d="M19 3H8.5a2.5 2.5 0 0 0 0 5H20"/><line x1="14" y1="12" x2="18" y2="12"/><line x1="14" y1="16" x2="16" y2="16"/></svg>
+          </div>
           <div class="why-title">Bespoke Menus</div>
           <p class="why-body">Can't find what you need? We'll design a menu tailored to your event and budget.</p>
         </div>
         <div class="why-item">
+          <div class="why-icon">
+            <!-- Lucide: heart -->
+            <svg viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+          </div>
           <div class="why-title">Personal Touch</div>
           <p class="why-body">A boutique husband-and-wife team who care about your event the way a big company can't.</p>
         </div>
@@ -294,20 +394,44 @@ footer{background:var(--black);}
         <h2 class="section-h2">Every <em>Occasion</em></h2>
       </div>
       <div class="events-chips">
-        <div class="chip">School Groups</div>
-        <div class="chip">Adult Retreats</div>
-        <div class="chip">Corporate Functions</div>
-        <div class="chip">Birthday Parties</div>
-        <div class="chip">Weddings</div>
-        <div class="chip">Cocktail Parties</div>
-        <div class="chip">Gourmet BBQs</div>
-        <div class="chip">Camp Groups</div>
+        <div class="chip">
+          <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          School Groups
+        </div>
+        <div class="chip">
+          <svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+          Adult Retreats
+        </div>
+        <div class="chip">
+          <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+          Corporate Functions
+        </div>
+        <div class="chip">
+          <svg viewBox="0 0 24 24"><path d="M20 7h-9"/><path d="M14 17H5"/><circle cx="17" cy="17" r="3"/><circle cx="7" cy="7" r="3"/></svg>
+          Birthday Parties
+        </div>
+        <div class="chip">
+          <svg viewBox="0 0 24 24"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          Weddings
+        </div>
+        <div class="chip">
+          <svg viewBox="0 0 24 24"><path d="M8 2h8l1 7H7L8 2z"/><path d="M7 9c0 5 2 8 5 8s5-3 5-8"/><line x1="12" y1="17" x2="12" y2="21"/><line x1="8" y1="21" x2="16" y2="21"/></svg>
+          Cocktail Parties
+        </div>
+        <div class="chip">
+          <svg viewBox="0 0 24 24"><path d="M3 19l5-10 4 6 3-4 5 8"/><line x1="2" y1="19" x2="22" y2="19"/></svg>
+          Gourmet BBQs
+        </div>
+        <div class="chip">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          Camp Groups
+        </div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- MENU -->
+<!-- ══ MENU ══ -->
 <div class="page" id="page-menu">
   <div class="menu-hero">
     <div class="container">
@@ -316,41 +440,61 @@ footer{background:var(--black);}
       <p>From school camps to wedding receptions — freshly prepared, carefully crafted menus for every kind of gathering.</p>
     </div>
   </div>
-  <div class="menu-cards container">
+  <div class="menu-cards">
     <a class="menu-card" href="http://www.ashkelskitchen.com.au/School%20Camp%20Menu.pdf" target="_blank" rel="noopener">
       <div class="menu-card-stripe"></div>
       <div class="menu-card-body">
-        <div class="menu-cat">Camps &amp; Retreats</div>
+        <div class="menu-cat">
+          <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          Camps &amp; Retreats
+        </div>
         <div class="menu-title">School Camps Menu</div>
         <p class="menu-desc">Freshly prepared meals designed for the tastes and hunger of school camp groups. Wholesome, satisfying food made with care for young appetites.</p>
-        <span class="menu-link">Download PDF <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        <span class="menu-link">Download PDF
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </span>
       </div>
     </a>
     <a class="menu-card" href="http://www.ashkelskitchen.com.au/Cocktail%20Treats.pdf" target="_blank" rel="noopener">
       <div class="menu-card-stripe"></div>
       <div class="menu-card-body">
-        <div class="menu-cat">Functions &amp; Parties</div>
+        <div class="menu-cat">
+          <svg viewBox="0 0 24 24"><path d="M8 2h8l1 7H7L8 2z"/><path d="M7 9c0 5 2 8 5 8s5-3 5-8"/><line x1="12" y1="17" x2="12" y2="21"/><line x1="8" y1="21" x2="16" y2="21"/></svg>
+          Functions &amp; Parties
+        </div>
         <div class="menu-title">Cocktail Treats Menu</div>
         <p class="menu-desc">A curated selection of hot and cold cocktail treats — perfect for functions, parties, and corporate events where presentation and elegance matter.</p>
-        <span class="menu-link">Download PDF <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        <span class="menu-link">Download PDF
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </span>
       </div>
     </a>
     <a class="menu-card alt" href="http://www.ashkelskitchen.com.au/Adult%20Retreat%20Menu.pdf" target="_blank" rel="noopener">
       <div class="menu-card-stripe"></div>
       <div class="menu-card-body">
-        <div class="menu-cat">Camps &amp; Retreats</div>
+        <div class="menu-cat">
+          <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          Camps &amp; Retreats
+        </div>
         <div class="menu-title">Adult Retreat Menu</div>
         <p class="menu-desc">Fresh, satisfying meals designed for the tastes and hunger of adult camp and retreat groups. Comfort food with a thoughtful, elevated touch.</p>
-        <span class="menu-link">Download PDF <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        <span class="menu-link">Download PDF
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </span>
       </div>
     </a>
     <a class="menu-card alt" href="http://www.ashkelskitchen.com.au/Gourmet%20BBQ.pdf" target="_blank" rel="noopener">
       <div class="menu-card-stripe"></div>
       <div class="menu-card-body">
-        <div class="menu-cat">Functions &amp; Parties</div>
+        <div class="menu-cat">
+          <svg viewBox="0 0 24 24"><path d="M3 19l5-10 4 6 3-4 5 8"/><line x1="2" y1="19" x2="22" y2="19"/></svg>
+          Functions &amp; Parties
+        </div>
         <div class="menu-title">Gourmet BBQ Menu</div>
         <p class="menu-desc">Far beyond the ordinary backyard BBQ — bold flavours, quality cuts, and that unmistakable Ash &amp; Kel's touch. Perfect for outdoor celebrations.</p>
-        <span class="menu-link">Download PDF <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        <span class="menu-link">Download PDF
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </span>
       </div>
     </a>
   </div>
@@ -362,7 +506,7 @@ footer{background:var(--black);}
   </div>
 </div>
 
-<!-- ABOUT -->
+<!-- ══ ABOUT ══ -->
 <div class="page" id="page-about">
   <div class="about-hero">
     <div class="container">
@@ -389,7 +533,10 @@ footer{background:var(--black);}
           <img class="team-photo" src="http://www.ashkelskitchen.com.au/ash.jpg" alt="Ashley Parr" onerror="this.outerHTML='<div class=team-photo-fb>&#128104;&#8205;&#127859;</div>'">
           <div class="team-info">
             <div class="team-name">Ashley Parr</div>
-            <div class="team-role">Chef</div>
+            <div class="team-role">
+              <svg viewBox="0 0 24 24"><path d="M6 13.87A4 4 0 0 1 7.41 6a5.11 5.11 0 0 1 1.05-1.54 5 5 0 0 1 7.08 0A5.11 5.11 0 0 1 16.59 6 4 4 0 0 1 18 13.87V21H6Z"/><line x1="6" y1="17" x2="18" y2="17"/></svg>
+              Chef
+            </div>
             <p class="team-bio">Ashley began as an apprentice chef at age 15 and studied at Tafe SA. He has worked in many well-known kitchens — the Three Brothers Arms, The Magic Flute, and the Lenzerheide Restaurant — before becoming Head Chef of Dixon's Restaurant. He brings over a decade of industry experience to every event.</p>
           </div>
         </div>
@@ -397,7 +544,10 @@ footer{background:var(--black);}
           <img class="team-photo" src="http://www.ashkelskitchen.com.au/kel.jpg" alt="Kelly Parr" onerror="this.outerHTML='<div class=team-photo-fb>&#128105;&#8205;&#127859;</div>'">
           <div class="team-info">
             <div class="team-name">Kelly Parr</div>
-            <div class="team-role">Cook</div>
+            <div class="team-role">
+              <svg viewBox="0 0 24 24"><path d="M12 2c0 0-3 2.5-3 5a3 3 0 0 0 6 0c0-2.5-3-5-3-5z"/><line x1="12" y1="10" x2="12" y2="13"/><rect x="3" y="13" width="18" height="8" rx="1.5"/></svg>
+              Cook
+            </div>
             <p class="team-bio">Kelly has 10 years of hospitality experience, including 5 years as assistant restaurant manager of the Goodwood Park Hotel. Auditioned and shortlisted for Masterchef in 2009, she has a strong knowledge of food flavours and an extensive repertoire of dishes from elegant dinner parties to large-scale events.</p>
           </div>
         </div>
@@ -406,7 +556,7 @@ footer{background:var(--black);}
   </div>
 </div>
 
-<!-- CATERING -->
+<!-- ══ CATERING ══ -->
 <div class="page" id="page-catering">
   <div class="catering-hero">
     <div class="container">
@@ -422,83 +572,48 @@ footer{background:var(--black);}
       <p class="section-sub center">Whatever the occasion, we'll make it memorable — with food that reflects the care and craft of a team who truly loves what they do.</p>
     </div>
     <div class="event-types-grid">
-
       <div class="event-type-card">
         <div class="etc-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C11B2E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-            <polyline points="9 22 9 12 15 12 15 22"/>
-          </svg>
+          <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
         </div>
         <div class="etc-title">School Camps &amp; Retreats</div>
         <p class="etc-body">Freshly prepared, hearty meals designed for active groups. Wholesome food that kids and adults love.</p>
       </div>
-
       <div class="event-type-card">
         <div class="etc-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C11B2E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="2" y="7" width="20" height="14" rx="2"/>
-            <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/>
-            <line x1="12" y1="12" x2="12" y2="16"/>
-            <line x1="10" y1="14" x2="14" y2="14"/>
-          </svg>
+          <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
         </div>
         <div class="etc-title">Corporate Functions</div>
         <p class="etc-body">Professional, polished catering that reflects well on your business — from light cocktail spreads to sit-down lunches.</p>
       </div>
-
       <div class="event-type-card">
         <div class="etc-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C11B2E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/>
-            <circle cx="12" cy="10" r="2.5"/>
-          </svg>
+          <svg viewBox="0 0 24 24"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="2.5"/></svg>
         </div>
         <div class="etc-title">Weddings</div>
         <p class="etc-body">Your big day deserves exceptional food. We work with you to create a menu that feels personal and memorable.</p>
       </div>
-
       <div class="event-type-card">
         <div class="etc-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C11B2E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 2c0 0-3 2.5-3 5a3 3 0 0 0 6 0c0-2.5-3-5-3-5z"/>
-            <line x1="12" y1="10" x2="12" y2="13"/>
-            <rect x="3" y="13" width="18" height="8" rx="1.5"/>
-            <line x1="7.5" y1="13" x2="7.5" y2="21"/>
-            <line x1="12" y1="13" x2="12" y2="21"/>
-            <line x1="16.5" y1="13" x2="16.5" y2="21"/>
-          </svg>
+          <svg viewBox="0 0 24 24"><path d="M20 7h-9"/><path d="M14 17H5"/><circle cx="17" cy="17" r="3"/><circle cx="7" cy="7" r="3"/></svg>
         </div>
         <div class="etc-title">Birthday Parties</div>
         <p class="etc-body">Whether it's a milestone or a casual celebration, we bring the food — you enjoy the party.</p>
       </div>
-
       <div class="event-type-card">
         <div class="etc-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C11B2E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M3 19l5-10 4 6 3-4 5 8"/>
-            <line x1="2" y1="19" x2="22" y2="19"/>
-            <circle cx="18" cy="6" r="2.5"/>
-            <path d="M18 3.5v1M18 8.5v1M15.5 6h-1M20.5 6h1M16.3 4.3l-.7-.7M20.4 8.4l-.7-.7M20.4 4.3l.7-.7M16.3 8.4l.7-.7"/>
-          </svg>
+          <svg viewBox="0 0 24 24"><path d="M3 19l5-10 4 6 3-4 5 8"/><line x1="2" y1="19" x2="22" y2="19"/><circle cx="18" cy="6" r="2.5"/></svg>
         </div>
         <div class="etc-title">Adult Retreats</div>
         <p class="etc-body">Sophisticated, relaxed dining for adult groups. Great food sets the tone for a great retreat.</p>
       </div>
-
       <div class="event-type-card">
         <div class="etc-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C11B2E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M8 2h8l1 7H7L8 2z"/>
-            <path d="M7 9c0 5 2 8 5 8s5-3 5-8"/>
-            <line x1="12" y1="17" x2="12" y2="21"/>
-            <line x1="8" y1="21" x2="16" y2="21"/>
-          </svg>
+          <svg viewBox="0 0 24 24"><path d="M8 2h8l1 7H7L8 2z"/><path d="M7 9c0 5 2 8 5 8s5-3 5-8"/><line x1="12" y1="17" x2="12" y2="21"/><line x1="8" y1="21" x2="16" y2="21"/></svg>
         </div>
         <div class="etc-title">Cocktail Parties</div>
         <p class="etc-body">Elegant hot and cold cocktail treats that impress guests and make hosting effortless.</p>
       </div>
-
     </div>
   </div>
   <div class="catering-how">
@@ -536,12 +651,14 @@ footer{background:var(--black);}
       <div class="eyebrow center light">Ready?</div>
       <h2>Let's plan your <em>perfect</em> event.</h2>
       <p>Get in touch and we'll put together something special — tailored to your occasion, your guests, and your budget.</p>
-      <button class="btn btn-red" onclick="goPage('contact')">Make an Enquiry <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+      <button class="btn btn-red" onclick="goPage('contact')">Make an Enquiry
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
     </div>
   </div>
 </div>
 
-<!-- CONTACT -->
+<!-- ══ CONTACT ══ -->
 <div class="page" id="page-contact">
   <div class="container">
     <div class="contact-layout">
@@ -551,19 +668,27 @@ footer{background:var(--black);}
         <p>Thanks for your interest in Ash &amp; Kel's Kitchen. Fill out the form and we'll get back to you as soon as possible. If you can't find a menu that suits your needs or budget, just ask — we'd love to design something for you.</p>
         <div class="contact-list">
           <div class="contact-item">
-            <div class="contact-dot">&#128222;</div>
+            <div class="contact-dot">
+              <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.43 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.64a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
             <div class="contact-text"><strong>Kel</strong><a href="tel:0430165007">0430 165 007</a></div>
           </div>
           <div class="contact-item">
-            <div class="contact-dot">&#128222;</div>
+            <div class="contact-dot">
+              <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.43 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.64a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
             <div class="contact-text"><strong>Ash</strong><a href="tel:0423463104">0423 463 104</a></div>
           </div>
           <div class="contact-item">
-            <div class="contact-dot">&#9993;</div>
+            <div class="contact-dot">
+              <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
             <div class="contact-text"><strong>Email</strong><a href="mailto:bookings@ashkelskitchen.com.au">bookings@ashkelskitchen.com.au</a></div>
           </div>
           <div class="contact-item">
-            <div class="contact-dot">&#128205;</div>
+            <div class="contact-dot">
+              <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
             <div class="contact-text"><strong>Location</strong><span>Adelaide Hills, South Australia</span></div>
           </div>
         </div>
@@ -583,9 +708,10 @@ footer{background:var(--black);}
             <div class="form-group"><label>Phone *</label><input type="tel" id="f-phone" placeholder="04XX XXX XXX"></div>
             <div class="form-group"><label>Email Address *</label><input type="email" id="f-email" placeholder="you@example.com"></div>
             <div class="form-row">
-              <div class="form-group"><label>Event Date</label><input type="date" id="f-date"></div>
-              <div class="form-group"><label>Number of Guests</label><input type="number" id="f-guests" placeholder="e.g. 40" min="1"></div>
+              <div class="form-group"><label>Event Start Date</label><input type="date" id="f-date-start"></div>
+              <div class="form-group"><label>Event End Date</label><input type="date" id="f-date-end"></div>
             </div>
+            <div class="form-group"><label>Number of Guests</label><input type="number" id="f-guests" placeholder="e.g. 40" min="1"></div>
             <div class="form-group"><label>Venue / Location</label><input type="text" id="f-venue" placeholder="Venue name or suburb"></div>
             <div class="form-group">
               <label>Menu of Interest</label>
@@ -599,10 +725,15 @@ footer{background:var(--black);}
               </select>
             </div>
             <div class="form-group"><label>Message</label><textarea id="f-msg" placeholder="Tell us about your event, any dietary requirements, or special requests..."></textarea></div>
-            <button class="btn-submit" id="submit-btn" onclick="submitForm()">Send Enquiry</button>
+            <button class="btn-submit" id="submit-btn" onclick="submitForm()">
+              <svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              Send Enquiry
+            </button>
           </div>
           <div class="form-success" id="form-success">
-            <div class="success-check">&#10003;</div>
+            <div class="success-check">
+              <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
             <h3>Enquiry Sent!</h3>
             <p>Thank you for reaching out. We'll review your details and be in touch shortly.<br><br>For urgent matters, call Kel on <a href="tel:0430165007">0430 165 007</a>.</p>
           </div>
@@ -612,7 +743,7 @@ footer{background:var(--black);}
   </div>
 </div>
 
-<!-- ORDER ONLINE -->
+<!-- ══ ORDER ONLINE ══ -->
 <div class="page" id="page-order">
   <div class="order-hero">
     <div class="container">
@@ -624,21 +755,27 @@ footer{background:var(--black);}
   <div class="container">
     <div class="order-options">
       <div class="order-card">
-        <div class="order-card-icon">&#128203;</div>
+        <div class="order-card-icon">
+          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        </div>
         <div class="badge">Recommended</div>
         <h3>Submit an Enquiry Form</h3>
         <p>Fill out our online enquiry form with your event details, guest numbers, and menu preferences. We'll get back to you with a tailored quote.</p>
         <button class="btn btn-red" onclick="goPage('contact')">Fill Out Form</button>
       </div>
       <div class="order-card">
-        <div class="order-card-icon">&#128222;</div>
+        <div class="order-card-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.43 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.64a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </div>
         <div class="badge" style="background:rgba(107,102,94,.08);color:var(--stone);">Direct</div>
         <h3>Call Us Directly</h3>
         <p>Prefer to talk it through? Call Kelly or Ashley directly and we'll help you put together the perfect menu for your event.</p>
         <a href="tel:0430165007" class="btn btn-outline" style="display:inline-flex;">Call 0430 165 007</a>
       </div>
       <div class="order-card">
-        <div class="order-card-icon">&#9993;&#65039;</div>
+        <div class="order-card-icon">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
         <div class="badge" style="background:rgba(107,102,94,.08);color:var(--stone);">Email</div>
         <h3>Send Us an Email</h3>
         <p>Email your event details to us and we'll put together a custom quote. We endeavour to respond within one business day.</p>
@@ -648,7 +785,7 @@ footer{background:var(--black);}
   </div>
 </div>
 
-<!-- FOOTER -->
+<!-- ══ FOOTER ══ -->
 <footer>
   <div class="footer-main">
     <div class="footer-logo">
@@ -674,25 +811,65 @@ footer{background:var(--black);}
 </footer>
 
 <script>
+/* ── Navigation ── */
 function goPage(id) {
   document.querySelectorAll(".page").forEach(p => p.classList.remove("is-active"));
-  document.querySelectorAll(".nav-btn").forEach(b => b.classList.remove("is-active"));
+  document.querySelectorAll(".nav-btn, .mobile-nav-item").forEach(b => b.classList.remove("is-active"));
   var page = document.getElementById("page-" + id);
   if (page) page.classList.add("is-active");
   document.querySelectorAll("[data-page='" + id + "']").forEach(b => b.classList.add("is-active"));
   window.scrollTo({ top: 0, behavior: "smooth" });
+  closeMobileNav();
 }
 
 document.querySelectorAll("[data-page]").forEach(function(btn) {
   btn.addEventListener("click", function() { goPage(btn.dataset.page); });
 });
 
+/* ── Mobile nav ── */
+var mobileNav = document.getElementById("mobile-nav");
+var mobileOverlay = document.getElementById("mobile-overlay");
+var hamburgerBtn = document.getElementById("hamburger-btn");
+var hamIcon = document.getElementById("ham-icon");
+var isOpen = false;
+
+var openIcon = '<line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>';
+var closeIcon = '<line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>';
+
+function openMobileNav() {
+  isOpen = true;
+  mobileNav.classList.add("is-open");
+  mobileOverlay.classList.add("is-open");
+  hamIcon.innerHTML = closeIcon;
+  document.body.style.overflow = "hidden";
+}
+function closeMobileNav() {
+  isOpen = false;
+  mobileNav.classList.remove("is-open");
+  mobileOverlay.classList.remove("is-open");
+  hamIcon.innerHTML = openIcon;
+  document.body.style.overflow = "";
+}
+hamburgerBtn.addEventListener("click", function() {
+  isOpen ? closeMobileNav() : openMobileNav();
+});
+mobileOverlay.addEventListener("click", closeMobileNav);
+
+/* ── Date validation ── */
+document.getElementById("f-date-start").addEventListener("change", function() {
+  var endInput = document.getElementById("f-date-end");
+  endInput.min = this.value;
+  if (endInput.value && endInput.value < this.value) endInput.value = this.value;
+});
+
+/* ── Form submission ── */
 async function submitForm() {
   var first  = document.getElementById("f-first").value.trim();
   var last   = document.getElementById("f-last").value.trim();
   var phone  = document.getElementById("f-phone").value.trim();
   var email  = document.getElementById("f-email").value.trim();
-  var date   = document.getElementById("f-date").value;
+  var dateStart = document.getElementById("f-date-start").value;
+  var dateEnd   = document.getElementById("f-date-end").value;
   var guests = document.getElementById("f-guests").value;
   var venue  = document.getElementById("f-venue").value.trim();
   var menu   = document.getElementById("f-menu").value;
@@ -706,6 +883,10 @@ async function submitForm() {
     alert("Please fill in your name, phone and email to continue.");
     return;
   }
+
+  var dateRange = dateStart
+    ? (dateEnd && dateEnd !== dateStart ? dateStart + " to " + dateEnd : dateStart)
+    : "Not specified";
 
   btn.disabled = true;
   btn.textContent = "Sending...";
@@ -721,7 +902,7 @@ async function submitForm() {
         "Last Name": last,
         "Phone": phone,
         "Email": email,
-        "Event Date": date || "Not specified",
+        "Event Dates": dateRange,
         "Number of Guests": guests || "Not specified",
         "Venue / Location": venue || "Not specified",
         "Menu of Interest": menu || "Not specified",
@@ -737,7 +918,7 @@ async function submitForm() {
     }
   } catch(e) {
     btn.disabled = false;
-    btn.textContent = "Send Enquiry";
+    btn.innerHTML = '<svg viewBox="0 0 24 24" width="15" height="15" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Send Enquiry';
     errEl.style.display = "block";
   }
 }
