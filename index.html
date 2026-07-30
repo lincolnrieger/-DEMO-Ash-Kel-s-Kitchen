@@ -13,7 +13,6 @@
   --stone:#6E665E; --dust:#A89D94;
   --cream:#FAF7F2; --linen:#F0E9DE; --warm:#E8DDD0; --border:#DDD4C8;
   --white:#FFFFFF;
-  --shadow-sm:0 2px 8px rgba(0,0,0,0.07);
   --shadow-md:0 8px 28px rgba(0,0,0,0.10);
   --shadow-lg:0 20px 56px rgba(0,0,0,0.13);
 }
@@ -83,7 +82,6 @@ header{position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(250,247,2
 /* ── LAYOUT ── */
 .container{max-width:1240px;margin:0 auto;padding:0 2rem;}
 .section{padding:6rem 0;}
-.section-sm{padding:3.5rem 0;}
 .section-head{margin-bottom:3rem;}
 .section-head.center{text-align:center;}
 .section-h2{font-family:"Playfair Display",serif;font-size:clamp(2rem,3.2vw,2.9rem);font-weight:700;line-height:1.12;color:var(--charcoal);margin-top:.6rem;}
@@ -117,35 +115,22 @@ header{position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(250,247,2
 .why-title{font-family:"Playfair Display",serif;font-size:1.05rem;font-weight:700;color:var(--white);margin-bottom:.5rem;}
 .why-body{font-size:.84rem;font-weight:300;line-height:1.8;color:rgba(255,255,255,.55);}
 
-/* ── EVENTS ── */
-.events-section{background:var(--linen);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
-.events-chips{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem;}
-.chip{display:flex;align-items:center;gap:.5rem;padding:.5rem 1.1rem;background:var(--white);border:1px solid var(--border);border-radius:40px;font-size:.82rem;font-weight:400;color:var(--ink);transition:all .2s;cursor:default;}
-.chip svg{width:14px;height:14px;flex-shrink:0;stroke:var(--dust);stroke-width:1.75;fill:none;stroke-linecap:round;stroke-linejoin:round;transition:stroke .2s;}
-.chip:hover{border-color:var(--red);color:var(--red);transform:translateY(-2px);box-shadow:var(--shadow-sm);}
-.chip:hover svg{stroke:var(--red);}
-
 /* ── MENU ── */
 .menu-hero{background:var(--charcoal);padding:5rem 0;text-align:center;background-image:radial-gradient(circle at 80% 20%,rgba(193,27,46,.12) 0%,transparent 55%),radial-gradient(circle at 20% 80%,rgba(193,27,46,.08) 0%,transparent 50%);}
 .menu-hero h1{font-family:"Playfair Display",serif;font-size:clamp(2.4rem,4vw,4rem);font-weight:700;color:var(--white);line-height:1.1;}
 .menu-hero h1 em{font-style:italic;color:var(--red-lt);}
 .menu-hero p{margin:.9rem auto 0;font-size:.95rem;font-weight:300;line-height:1.85;color:rgba(255,255,255,.55);max-width:500px;}
-.menu-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;max-width:1000px;margin:0 auto;padding:5rem 2rem;}
-.menu-card{background:var(--white);border:1px solid var(--border);border-radius:8px;overflow:hidden;transition:transform .25s,box-shadow .25s;text-decoration:none;display:block;}
-.menu-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);}
-.menu-card-stripe{height:4px;background:var(--red);}
-.menu-card.alt .menu-card-stripe{background:var(--warm);}
-.menu-card-body{padding:2.25rem;}
-.menu-cat{font-size:.66rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:.5rem;display:flex;align-items:center;gap:.4rem;}
+.menu-feature{display:grid;grid-template-columns:1.35fr 1fr;background:var(--white);border:1px solid var(--border);border-radius:10px;overflow:hidden;box-shadow:var(--shadow-md);}
+.menu-feature-main{padding:3rem;border-right:1px solid var(--border);}
+.menu-cat{font-size:.66rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:.6rem;display:flex;align-items:center;gap:.4rem;}
 .menu-cat svg{width:13px;height:13px;stroke:var(--red);stroke-width:1.75;fill:none;stroke-linecap:round;stroke-linejoin:round;}
-.menu-card.alt .menu-cat{color:var(--stone);}
-.menu-card.alt .menu-cat svg{stroke:var(--stone);}
-.menu-title{font-family:"Playfair Display",serif;font-size:1.5rem;font-weight:700;color:var(--charcoal);margin-bottom:.7rem;}
-.menu-desc{font-size:.87rem;font-weight:300;line-height:1.82;color:var(--stone);margin-bottom:1.75rem;}
-.menu-link{display:inline-flex;align-items:center;gap:.5rem;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--red);transition:gap .2s;}
-.menu-link:hover{gap:.9rem;}
-.menu-link svg{width:14px;height:14px;stroke:var(--red);stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round;}
-.menu-note{max-width:1000px;margin:0 auto;padding:0 2rem 5rem;}
+.menu-title{font-family:"Playfair Display",serif;font-size:clamp(1.7rem,2.6vw,2.3rem);font-weight:700;color:var(--charcoal);margin-bottom:.9rem;}
+.menu-desc{font-size:.95rem;font-weight:300;line-height:1.9;color:var(--stone);margin-bottom:1.9rem;}
+.menu-feature-side{padding:3rem 2.5rem;background:var(--linen);}
+.mf-head{font-size:.66rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--stone);margin-bottom:1.2rem;}
+.mf-list{list-style:none;display:flex;flex-direction:column;gap:.85rem;}
+.mf-list li{display:flex;align-items:flex-start;gap:.7rem;font-size:.88rem;font-weight:300;line-height:1.6;color:var(--ink);}
+.mf-list svg{width:15px;height:15px;flex-shrink:0;margin-top:.18rem;stroke:var(--red);stroke-width:2.5;fill:none;stroke-linecap:round;stroke-linejoin:round;}
 .menu-note-box{background:var(--linen);border:1px solid var(--border);border-radius:8px;padding:1.6rem 2rem;font-size:.87rem;font-weight:300;line-height:1.85;color:var(--stone);text-align:center;font-style:italic;}
 .menu-note-box a{color:var(--red);font-weight:600;font-style:normal;}
 
@@ -187,6 +172,10 @@ blockquote.pull p{font-family:"Playfair Display",serif;font-style:italic;font-si
 .step-num{font-family:"Playfair Display",serif;font-size:2.4rem;font-weight:700;color:var(--red);line-height:1;margin-bottom:.75rem;}
 .step-title{font-family:"Playfair Display",serif;font-size:1rem;font-weight:700;color:var(--charcoal);margin-bottom:.4rem;}
 .step-body{font-size:.83rem;font-weight:300;line-height:1.78;color:var(--stone);}
+.cta-band{background:var(--linen);border-top:1px solid var(--border);padding:5rem 0;text-align:center;}
+.cta-band h2{font-family:"Playfair Display",serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;color:var(--charcoal);line-height:1.15;margin-top:.6rem;}
+.cta-band h2 em{font-style:italic;color:var(--red);}
+.cta-band p{margin:.9rem auto 2rem;font-size:.95rem;font-weight:300;color:var(--stone);max-width:480px;line-height:1.85;}
 .catering-cta{background:var(--charcoal);padding:5rem 0;text-align:center;}
 .catering-cta h2{font-family:"Playfair Display",serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;color:var(--white);line-height:1.15;margin-top:.6rem;}
 .catering-cta p{margin:.9rem auto 2rem;font-size:.95rem;font-weight:300;color:rgba(255,255,255,.55);max-width:480px;line-height:1.85;}
@@ -210,10 +199,9 @@ blockquote.pull p{font-family:"Playfair Display",serif;font-style:italic;font-si
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
 .form-group{display:flex;flex-direction:column;gap:.32rem;margin-bottom:.9rem;}
 .form-group label{font-size:.67rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);}
-.form-group input,.form-group select,.form-group textarea{padding:.68rem .9rem;border:1.5px solid var(--border);border-radius:5px;font-family:"Lato",sans-serif;font-size:.88rem;font-weight:300;color:var(--ink);background:var(--cream);outline:none;transition:border-color .2s,box-shadow .2s;-webkit-appearance:none;}
-.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--red);box-shadow:0 0 0 3px rgba(193,27,46,.09);background:var(--white);}
+.form-group input,.form-group textarea{padding:.68rem .9rem;border:1.5px solid var(--border);border-radius:5px;font-family:"Lato",sans-serif;font-size:.88rem;font-weight:300;color:var(--ink);background:var(--cream);outline:none;transition:border-color .2s,box-shadow .2s;-webkit-appearance:none;}
+.form-group input:focus,.form-group textarea:focus{border-color:var(--red);box-shadow:0 0 0 3px rgba(193,27,46,.09);background:var(--white);}
 .form-group textarea{resize:vertical;min-height:105px;}
-.form-group select{cursor:pointer;}
 .btn-submit{width:100%;padding:.9rem;background:var(--red);color:var(--white);border:none;border-radius:5px;font-family:"Lato",sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:background .2s,transform .15s,box-shadow .2s;display:flex;align-items:center;justify-content:center;gap:.5rem;}
 .btn-submit svg{width:15px;height:15px;stroke:var(--white);stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round;}
 .btn-submit:hover{background:var(--red-dk);transform:translateY(-2px);box-shadow:0 8px 22px rgba(193,27,46,.28);}
@@ -225,20 +213,6 @@ blockquote.pull p{font-family:"Playfair Display",serif;font-style:italic;font-si
 .form-success h3{font-family:"Playfair Display",serif;font-size:1.6rem;font-weight:700;color:var(--charcoal);}
 .form-success p{font-size:.9rem;font-weight:300;color:var(--stone);line-height:1.8;margin-top:.5rem;}
 .form-success a{color:var(--red);font-weight:600;}
-
-/* ── ORDER ── */
-.order-hero{background:var(--cream);border-bottom:1px solid var(--border);padding:5rem 0;text-align:center;}
-.order-hero h1{font-family:"Playfair Display",serif;font-size:clamp(2.4rem,4vw,4rem);font-weight:700;color:var(--charcoal);line-height:1.1;}
-.order-hero h1 em{font-style:italic;color:var(--red);}
-.order-hero p{margin:.9rem auto 0;font-size:.95rem;font-weight:300;color:var(--stone);max-width:520px;line-height:1.85;}
-.order-options{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;padding:5rem 0;}
-.order-card{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:2.5rem 2rem;text-align:center;transition:transform .25s,box-shadow .25s;}
-.order-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg);}
-.order-card-icon{display:flex;justify-content:center;margin-bottom:1.1rem;}
-.order-card-icon svg{width:32px;height:32px;stroke:var(--red);stroke-width:1.5;fill:none;stroke-linecap:round;stroke-linejoin:round;}
-.order-card h3{font-family:"Playfair Display",serif;font-size:1.2rem;font-weight:700;color:var(--charcoal);margin-bottom:.5rem;}
-.order-card p{font-size:.85rem;font-weight:300;line-height:1.8;color:var(--stone);margin-bottom:1.75rem;}
-.order-card .badge{display:inline-block;padding:.25rem .75rem;border-radius:20px;font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:rgba(193,27,46,.09);color:var(--red);margin-bottom:1.4rem;}
 
 /* ── FOOTER ── */
 footer{background:var(--black);}
@@ -257,7 +231,6 @@ footer{background:var(--black);}
   .why-grid{grid-template-columns:1fr 1fr;}
   .event-types-grid{grid-template-columns:1fr 1fr;}
   .how-steps{grid-template-columns:1fr 1fr;}
-  .order-options{grid-template-columns:1fr 1fr;}
 }
 @media(max-width:768px){
   .header-wrap{padding:0 1.25rem;}
@@ -268,8 +241,10 @@ footer{background:var(--black);}
   .hero-left{padding:3rem 1.5rem;}
   .hero-right{height:56vw;min-height:240px;}
   .about-grid,.contact-layout{grid-template-columns:1fr;gap:2.5rem;padding:3rem 0;}
-  .menu-cards{grid-template-columns:1fr;gap:1.25rem;padding:3rem 1.25rem;}
-  .why-grid,.event-types-grid,.how-steps,.order-options{grid-template-columns:1fr;}
+  .menu-feature{grid-template-columns:1fr;}
+  .menu-feature-main{padding:2.25rem 1.5rem;border-right:none;border-bottom:1px solid var(--border);}
+  .menu-feature-side{padding:2.25rem 1.5rem;}
+  .why-grid,.event-types-grid,.how-steps{grid-template-columns:1fr;}
   .footer-main{grid-template-columns:1fr;gap:1.5rem;text-align:center;}
   .footer-copy{text-align:center;}
   .container{padding:0 1.25rem;}
@@ -277,8 +252,7 @@ footer{background:var(--black);}
   .section{padding:3.5rem 0;}
   .hero-kpi{gap:1.5rem;}
   .hero-left{padding:2.5rem 1.25rem;}
-  .order-options{grid-template-columns:1fr;padding:3rem 0;}
-  .catering-cta{padding:3.5rem 0;}
+  .catering-cta,.cta-band{padding:3.5rem 0;}
 }
 </style>
 </head>
@@ -296,7 +270,7 @@ footer{background:var(--black);}
         <li><button class="nav-btn" data-page="about">About Us</button></li>
         <li><button class="nav-btn" data-page="catering">Camp Catering</button></li>
         <li><button class="nav-btn" data-page="contact">Contact</button></li>
-        <li><button class="nav-btn cta" data-page="order">Order Online</button></li>
+        <li><button class="nav-btn cta" data-page="contact">Make an Enquiry</button></li>
       </ul>
       <!-- Hamburger for mobile -->
       <button class="hamburger" id="hamburger-btn" aria-label="Open menu">
@@ -319,7 +293,7 @@ footer{background:var(--black);}
     <button class="mobile-nav-item" data-page="about">About Us</button>
     <button class="mobile-nav-item" data-page="catering">Camp Catering</button>
     <button class="mobile-nav-item" data-page="contact">Contact</button>
-    <button class="mobile-nav-item cta-mobile" data-page="order">Order Online</button>
+    <button class="mobile-nav-item cta-mobile" data-page="contact">Make an Enquiry</button>
   </div>
 </div>
 
@@ -387,38 +361,14 @@ footer{background:var(--black);}
     </div>
   </div>
 
-  <div class="events-section section-sm">
+  <div class="cta-band">
     <div class="container">
-      <div class="section-head">
-        <div class="eyebrow">We Cater For</div>
-        <h2 class="section-h2">Camps &amp; <em>Groups</em></h2>
-      </div>
-      <div class="events-chips">
-        <div class="chip">
-          <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-          School Groups
-        </div>
-        <div class="chip">
-          <svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
-          Adult Retreats
-        </div>
-        <div class="chip">
-          <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
-          Corporate Functions
-        </div>
-        <div class="chip">
-          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-          Camp Groups
-        </div>
-        <div class="chip">
-          <svg viewBox="0 0 24 24"><path d="M12 2v20"/><path d="M5 9h14"/><path d="M5 22h14"/><path d="M7 22V9a5 5 0 0 1 10 0v13"/></svg>
-          Church &amp; Youth Groups
-        </div>
-        <div class="chip">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 0 0 18"/><path d="M3.5 9h17M3.5 15h17"/></svg>
-          Sporting &amp; Club Camps
-        </div>
-      </div>
+      <div class="eyebrow center">Got a camp coming up?</div>
+      <h2>Tell us the dates. <em>We'll</em> do the rest.</h2>
+      <p>School camps, adult retreats and corporate camps across the Adelaide Hills — and happy to travel further for an additional fee.</p>
+      <button class="btn btn-red" onclick="goPage('contact')">Make an Enquiry
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
     </div>
   </div>
 </div>
@@ -427,45 +377,37 @@ footer{background:var(--black);}
 <div class="page" id="page-menu">
   <div class="menu-hero">
     <div class="container">
-      <div class="eyebrow center light">Our Menus</div>
-      <h1>Fresh &amp; <em>Thoughtful</em> Menus</h1>
-      <p>From school camps to adult retreats — freshly prepared, carefully crafted menus built around how camp groups actually eat.</p>
+      <div class="eyebrow center light">Our Menu</div>
+      <h1>The <em>Camp</em> Menu</h1>
+      <p>One menu, built around how camp groups actually eat — and we'll happily build something different for your group.</p>
     </div>
   </div>
-  <div class="menu-cards">
-    <a class="menu-card" href="http://www.ashkelskitchen.com.au/School%20Camp%20Menu.pdf" target="_blank" rel="noopener">
-      <div class="menu-card-stripe"></div>
-      <div class="menu-card-body">
+  <div class="container section">
+    <div class="menu-feature">
+      <div class="menu-feature-main">
         <div class="menu-cat">
           <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
           Camps &amp; Retreats
         </div>
-        <div class="menu-title">School Camps Menu</div>
-        <p class="menu-desc">Freshly prepared meals designed for the tastes and hunger of school camp groups. Wholesome, satisfying food made with care for young appetites.</p>
-        <span class="menu-link">Download PDF
-          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </span>
+        <h2 class="menu-title">School Camps Menu</h2>
+        <p class="menu-desc">Freshly prepared meals designed for the tastes and hunger of camp groups. Wholesome, satisfying food made with care — and made to disappear.</p>
+        <a class="btn btn-red" href="http://www.ashkelskitchen.com.au/School%20Camp%20Menu.pdf" target="_blank" rel="noopener">Download the Menu
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>
+        </a>
       </div>
-    </a>
-    <a class="menu-card alt" href="http://www.ashkelskitchen.com.au/Adult%20Retreat%20Menu.pdf" target="_blank" rel="noopener">
-      <div class="menu-card-stripe"></div>
-      <div class="menu-card-body">
-        <div class="menu-cat">
-          <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-          Camps &amp; Retreats
-        </div>
-        <div class="menu-title">Adult Retreat Menu</div>
-        <p class="menu-desc">Fresh, satisfying meals designed for the tastes and hunger of adult camp and retreat groups. Comfort food with a thoughtful, elevated touch.</p>
-        <span class="menu-link">Download PDF
-          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </span>
+      <div class="menu-feature-side">
+        <div class="mf-head">What we can cover</div>
+        <ul class="mf-list">
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Breakfast, lunch and dinner</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Morning tea, afternoon tea and supper</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Dietary requirements and allergies</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Fussier young eaters looked after</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Freshly brewed coffee and Tim Tams</li>
+        </ul>
       </div>
-    </a>
-  </div>
-  <div class="menu-note">
-    <div class="menu-note-box">
-      Menus are subject to change. To enquire about fees for your camp, contact Kelly on — <a href="tel:0430165007">0430 165 007</a>. We're also happy to travel further afield for an additional fee.<br><br>
-      Can't find what you're looking for? We'd love to put a menu together for your group — <a href="#" onclick="goPage('contact');return false;">get in touch</a>.
+    </div>
+    <div class="menu-note-box" style="margin-top:2.5rem;">
+      Menus are subject to change. To enquire about fees for your camp, contact Kelly on <a href="tel:0430165007">0430 165 007</a> — or <a href="#" onclick="goPage('contact');return false;">send us the details</a> and we'll come back to you.
     </div>
   </div>
 </div>
@@ -577,7 +519,7 @@ footer{background:var(--black);}
         <div class="how-step">
           <div class="step-num">02</div>
           <div class="step-title">Choose a Menu</div>
-          <p class="step-body">Browse our existing menus or work with us to put something together for your group. We'll come back to you with fees.</p>
+          <p class="step-body">Browse our camp menu or work with us to put something together for your group. We'll come back to you with fees.</p>
         </div>
         <div class="how-step">
           <div class="step-num">03</div>
@@ -659,15 +601,6 @@ footer{background:var(--black);}
             </div>
             <div class="form-group"><label>Number in Group</label><input type="number" id="f-guests" placeholder="e.g. 40" min="1"></div>
             <div class="form-group"><label>Camp Venue / Location</label><input type="text" id="f-venue" placeholder="Camp site name or suburb"></div>
-            <div class="form-group">
-              <label>Menu of Interest</label>
-              <select id="f-menu">
-                <option value="">Select a menu...</option>
-                <option>School Camps Menu</option>
-                <option>Adult Retreat Menu</option>
-                <option>Custom / Not Sure Yet</option>
-              </select>
-            </div>
             <div class="form-group"><label>Message</label><textarea id="f-msg" placeholder="Tell us about your camp, any dietary requirements, or special requests..."></textarea></div>
             <button class="btn-submit" id="submit-btn" onclick="submitForm()">
               <svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
@@ -687,48 +620,6 @@ footer{background:var(--black);}
   </div>
 </div>
 
-<!-- ══ ORDER ONLINE ══ -->
-<div class="page" id="page-order">
-  <div class="order-hero">
-    <div class="container">
-      <div class="eyebrow center">Order Online</div>
-      <h1>Order <em>Online</em></h1>
-      <p>We're working on making it even easier to book your camp catering directly online. In the meantime, here's how you can reach us.</p>
-    </div>
-  </div>
-  <div class="container">
-    <div class="order-options">
-      <div class="order-card">
-        <div class="order-card-icon">
-          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-        </div>
-        <div class="badge">Recommended</div>
-        <h3>Submit an Enquiry Form</h3>
-        <p>Fill out our online enquiry form with your camp details, group numbers, and menu preferences. We'll get back to you with fees for your camp.</p>
-        <button class="btn btn-red" onclick="goPage('contact')">Fill Out Form</button>
-      </div>
-      <div class="order-card">
-        <div class="order-card-icon">
-          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.43 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.64a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        </div>
-        <div class="badge" style="background:rgba(107,102,94,.08);color:var(--stone);">Direct</div>
-        <h3>Call Us Directly</h3>
-        <p>Prefer to talk it through? Call Kelly or Ashley directly and we'll help you put together the right menu for your camp.</p>
-        <a href="tel:0430165007" class="btn btn-outline" style="display:inline-flex;">Call 0430 165 007</a>
-      </div>
-      <div class="order-card">
-        <div class="order-card-icon">
-          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        </div>
-        <div class="badge" style="background:rgba(107,102,94,.08);color:var(--stone);">Email</div>
-        <h3>Send Us an Email</h3>
-        <p>Email your camp details to us and we'll come back to you with fees. We endeavour to respond within one business day.</p>
-        <a href="mailto:bookings@ashkelskitchen.com.au" class="btn btn-outline" style="display:inline-flex;">Email Us</a>
-      </div>
-    </div>
-  </div>
-</div>
-
 <!-- ══ FOOTER ══ -->
 <footer>
   <div class="footer-main">
@@ -741,7 +632,6 @@ footer{background:var(--black);}
       <button onclick="goPage('about')">About Us</button>
       <button onclick="goPage('catering')">Camp Catering</button>
       <button onclick="goPage('contact')">Contact</button>
-      <button onclick="goPage('order')">Order Online</button>
     </nav>
     <div class="footer-copy">&copy; Ash &amp; Kel's Kitchen<br>Adelaide Hills, SA</div>
   </div>
@@ -818,7 +708,6 @@ async function submitForm() {
   var dateEnd   = document.getElementById("f-date-end").value;
   var guests = document.getElementById("f-guests").value;
   var venue  = document.getElementById("f-venue").value.trim();
-  var menu   = document.getElementById("f-menu").value;
   var msg    = document.getElementById("f-msg").value.trim();
   var errEl  = document.getElementById("form-error");
   var btn    = document.getElementById("submit-btn");
@@ -851,7 +740,6 @@ async function submitForm() {
         "Camp Dates": dateRange,
         "Number in Group": guests || "Not specified",
         "Camp Venue / Location": venue || "Not specified",
-        "Menu of Interest": menu || "Not specified",
         "Message": msg || "No message provided"
       })
     });
