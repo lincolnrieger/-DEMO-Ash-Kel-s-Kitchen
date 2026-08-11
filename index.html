@@ -265,7 +265,6 @@ footer a:hover{color:#fff;}
     <nav>
       <ul class="nav">
         <li><button class="on" data-p="home">Home</button></li>
-        <li><button data-p="menus">Camp Menus</button></li>
         <li><button data-p="about">About Us</button></li>
         <li><button data-p="contact">Contact</button></li>
         <li><a class="callbtn" href="tel:0430165007">
@@ -285,7 +284,6 @@ footer a:hover{color:#fff;}
 <div class="mnav" id="mnav">
   <div class="mnav-in">
     <button data-p="home">Home</button>
-    <button data-p="menus">Camp Menus</button>
     <button data-p="about">About Us</button>
     <button data-p="contact">Contact</button>
     <a class="mnav-call" href="tel:0430165007"><button class="mcall">Call Kel — 0430 165 007</button></a>
@@ -299,11 +297,11 @@ footer a:hover{color:#fff;}
     <div class="hero-img"></div>
     <div class="hero-panel">
       <div class="hero-box">
-        <div class="hero-eye">Resident caterers at Woodhouse Adventure Park</div>
-        <h1>You worry about the fun. We'll handle the fuel.</h1>
-        <p>Ash and Kel feed school camps across the Adelaide Hills. Three meals a day, snacks in between, and bowls of fruit out for the kids to help themselves.</p>
+        <div class="hero-eye">Woodhouse Adventure Park, Piccadilly</div>
+        <h1>Feeding school camps in the Adelaide Hills.</h1>
+        <p>Ash and Kel are the resident catering team at Woodhouse. Three meals a day, snacks in between, and bowls of fruit out for the kids to help themselves.</p>
         <div class="btns">
-          <button class="btn btn-white" onclick="go('menus')">See the camp menu
+          <button class="btn btn-white" onclick="jump('menu-section')">See the camp menu
             <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </button>
           <button class="btn btn-clear" onclick="go('contact')">Catering enquiry</button>
@@ -321,11 +319,11 @@ footer a:hover{color:#fff;}
     </div>
   </div>
 
-  <section class="slab sand">
+  <section class="slab sand" id="menu-section">
     <div class="wrap">
       <h2 class="big">What the kids get</h2>
       <div class="copy">
-        <p>Below is a real menu from a two-night camp at Woodhouse. Not a sample we wrote for a website. This is the food we cook week in, week out.</p>
+        <p>Below is a real menu from a two-night camp at Woodhouse.</p>
       </div>
 
       <div class="menu">
@@ -367,7 +365,50 @@ footer a:hover{color:#fff;}
         </p>
       </div>
       <div class="btns">
-        <button class="btn btn-line" onclick="go('menus')">Both catering options</button>
+        <a class="btn btn-line" href="http://www.ashkelskitchen.com.au/School%20Camp%20Menu.pdf" target="_blank" rel="noopener">Download the full menu
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="slab">
+    <div class="wrap">
+      <h2 class="big">Two ways to feed a group</h2>
+      <div class="copy">
+        <p>We cook the lot, or we send in the provisions and your group takes it from there. Either way the shopping, the planning and the dietary list are ours to worry about.</p>
+      </div>
+      <div class="prov" style="margin-top:2.5rem;">
+        <div class="prov-a">
+          <span class="tag">Option one</span>
+          <h3 class="mid">We cook, you eat</h3>
+          <p style="margin-top:.8rem;">Everything is cooked on site in the camp kitchen. No depot food, no reheated trays off a truck. You give us your arrival and departure times and we build the meal times around your program.</p>
+          <ul class="deflist">
+            <li><b>Breakfast</b> — cereals, toast, a hot option, tea and coffee</li>
+            <li><b>Morning tea</b> — something out of the oven, and fruit</li>
+            <li><b>Lunch</b> — hot or cold, packed to take out if the day runs long</li>
+            <li><b>Afternoon tea</b> — enough to get them through to dinner</li>
+            <li><b>Dinner and dessert</b> — a proper hot meal, always with pudding</li>
+            <li><b>Fruit, all day</b> — bowls out for the kids to help themselves</li>
+          </ul>
+        </div>
+        <div class="prov-b">
+          <span class="tag">Option two</span>
+          <h3 class="mid">We provision, you cook</h3>
+          <p style="margin-top:.8rem;">For smaller groups with their own hands and a working barbecue. We do the shopping and the prep. Eggs cracked and whisked, pancake mix made, lasagne assembled, crumble ready for the oven. Any delicious leftovers, pack up and take with you. Too easy.</p>
+          <ul class="deflist">
+            <li><b>What arrives</b> — breakfast, snacks, hamburgers and wraps for lunch, house-made lasagne or a barbecue pack for dinner, apple crumble and custard</li>
+            <li><b>The bits</b> — cutlery and crockery, sauces, salt and pepper, serviettes, cling wrap, foil and oil</li>
+          </ul>
+          <h4 style="font-family:Archivo,sans-serif;font-size:.76rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--mute);margin-top:1.5rem;">Your part</h4>
+          <ol class="steps">
+            <li>Cook the barbecue meat and the patties</li>
+            <li>Fry the bacon, eggs and pancake mix</li>
+            <li>Put the salads and wraps together</li>
+            <li>Heat the lasagne and the apple crumble</li>
+            <li>Enjoy</li>
+          </ol>
+        </div>
       </div>
     </div>
   </section>
@@ -444,7 +485,7 @@ footer a:hover{color:#fff;}
   <div class="callband">
     <div class="wrap">
       <h2>Talk to us about catering</h2>
-      <p>Camps at Woodhouse are booked through the Woodhouse office, and catering is arranged as part of that. For anything else, come straight to us.</p>
+      <p>Camps at Woodhouse are booked through the Woodhouse office, and catering is arranged as part of that. For anything else, come straight to us. Numbers, nights and dietary needs all change the price, so we do not publish one.</p>
       <div class="routes">
         <div class="route">
           <h3>Camps at Woodhouse</h3>
@@ -459,110 +500,6 @@ footer a:hover{color:#fff;}
       </div>
     </div>
   </div>
-</div>
-
-<!-- ═══ CAMP MENUS ═══ -->
-<div class="page" id="p-menus">
-  <div class="phead">
-    <div class="wrap">
-      <h1>Camp menus</h1>
-      <p>Two ways to feed a camp. We cook the lot, or we send in the provisions and your group takes it from there. Either way the shopping, the planning and the dietary list are ours to worry about.</p>
-    </div>
-  </div>
-
-  <section class="slab">
-    <div class="wrap">
-      <span class="tag">Option one</span>
-      <h2 class="big">We cook, you eat</h2>
-      <div class="copy">
-        <p>Everything is cooked on site in the camp kitchen. No depot food, no reheated trays off a truck. You give us your arrival and departure times and we build the meal times around your program.</p>
-      </div>
-      <div class="prov" style="margin-top:2.5rem;">
-        <div class="prov-a">
-          <h3 class="mid">Every day covers</h3>
-          <ul class="deflist">
-            <li><b>Breakfast</b> — cereals, toast, a hot option, tea and coffee</li>
-            <li><b>Morning tea</b> — something out of the oven, and fruit</li>
-            <li><b>Lunch</b> — hot or cold, packed to take out if the day runs long</li>
-            <li><b>Afternoon tea</b> — enough to get them through to dinner</li>
-            <li><b>Dinner and dessert</b> — a proper hot meal, always with pudding</li>
-            <li><b>Fruit, all day</b> — bowls out for the kids to help themselves</li>
-          </ul>
-          <div class="btns">
-            <a class="btn btn-red" href="http://www.ashkelskitchen.com.au/School%20Camp%20Menu.pdf" target="_blank" rel="noopener">Download the menu
-              <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>
-            </a>
-            <button class="btn btn-line" onclick="go('home')">See the sample menu</button>
-          </div>
-        </div>
-        <div class="prov-b">
-          <h3 class="mid">Good to know</h3>
-          <ul class="deflist">
-            <li>The kitchen is a <b>nut-free zone</b>.</li>
-            <li>Most allergies and dietary requirements are catered for. Complex needs want a bit more notice.</li>
-            <li>Meal times move with your program, not the other way round.</li>
-            <li>Menus change with the seasons and with your group.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="slab sand">
-    <div class="wrap">
-      <span class="tag">Option two</span>
-      <h2 class="big">We provision, you cook</h2>
-      <div class="copy">
-        <p>For smaller groups with their own hands and a working barbecue. We do the shopping and the prep. Eggs cracked and whisked, pancake mix made, lasagne assembled, crumble ready for the oven. Any delicious leftovers, pack up and take with you. Too easy.</p>
-      </div>
-      <div class="prov" style="margin-top:2.5rem;">
-        <div class="prov-a">
-          <h3 class="mid">What arrives</h3>
-          <ul class="deflist">
-            <li><b>Breakfast</b> — bread, cereals, butter, spreads, juice, milk, tea, coffee and Milo. Bacon and scrambled eggs. Pancakes with fresh whipped cream</li>
-            <li><b>Snacks</b> — biscuits, fruit, cheeses, crackers, dip, chips, muesli bars and tubs of yoghurt</li>
-            <li><b>Lunch</b> — hamburgers with all the trimmings. Ham and salad wraps</li>
-            <li><b>Dinner</b> — house-made lasagne with salad and ice cream sundaes. A barbecue pack with bread, salad, house-made apple crumble and custard</li>
-            <li><b>The bits</b> — cutlery and crockery, sauces, salt and pepper, serviettes, cling wrap, foil and oil</li>
-          </ul>
-        </div>
-        <div class="prov-b">
-          <h3 class="mid">Your part</h3>
-          <ol class="steps">
-            <li>Cook the barbecue meat</li>
-            <li>Put the salads together</li>
-            <li>Fry the bacon and eggs</li>
-            <li>Fry the pancake mix</li>
-            <li>Put the wraps together</li>
-            <li>Cook the hamburger patties</li>
-            <li>Heat the lasagne</li>
-            <li>Heat the apple crumble</li>
-            <li>Enjoy</li>
-          </ol>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="slab">
-    <div class="wrap">
-      <div class="split">
-        <div>
-          <h2 class="big">What it costs</h2>
-          <div class="copy">
-            <p>Numbers, nights, dietary needs and where you are camping all change the price, so we do not publish one. Send your details through and we will come back with a menu and the fees.</p>
-            <p>Camping somewhere other than Woodhouse? We will travel to you for an additional fee.</p>
-          </div>
-          <div class="btns">
-            <button class="btn btn-red" onclick="go('contact')">Ask about fees
-              <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </button>
-            <a class="btn btn-line" href="tel:0430165007">Call Kel</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 </div>
 
 <!-- ═══ ABOUT ═══ -->
@@ -702,7 +639,6 @@ footer a:hover{color:#fff;}
         <h4>Pages</h4>
         <ul class="flist">
           <li><a href="#" onclick="go('home');return false;">Home</a></li>
-          <li><a href="#" onclick="go('menus');return false;">Camp menus</a></li>
           <li><a href="#" onclick="go('about');return false;">About us</a></li>
           <li><a href="#" onclick="go('contact');return false;">Contact</a></li>
           <li><a href="https://www.woodhouse.org.au/" target="_blank" rel="noopener">Woodhouse Adventure Park</a></li>
@@ -730,6 +666,12 @@ function go(id){
 document.querySelectorAll("[data-p]").forEach(function(btn){
   btn.addEventListener("click", function(){ go(btn.dataset.p); });
 });
+
+/* Scroll to a section on the current page */
+function jump(id){
+  var el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+}
 
 /* ── Mobile nav ── */
 var mnav = document.getElementById("mnav");
