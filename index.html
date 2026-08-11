@@ -3,869 +3,802 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ash &amp; Kel's Kitchen — Camp Catering with a Difference</title>
+<title>Ash &amp; Kel's Kitchen — School Camp Catering, Adelaide Hills</title>
+<meta name="description" content="Resident catering team at Woodhouse Adventure Park, Piccadilly. School camp catering across the Adelaide Hills. Nut-free kitchen, fresh local produce, food kids will eat.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <style>
-:root {
-  --red:#C11B2E; --red-dk:#921220; --red-lt:#E8384A;
-  --black:#111111; --charcoal:#2A2A2A; --ink:#3C3531;
-  --stone:#6E665E; --dust:#A89D94;
-  --cream:#FAF7F2; --linen:#F0E9DE; --warm:#E8DDD0; --border:#DDD4C8;
-  --white:#FFFFFF;
-  --shadow-sm:0 2px 8px rgba(0,0,0,0.07);
-  --shadow-md:0 8px 28px rgba(0,0,0,0.10);
-  --shadow-lg:0 20px 56px rgba(0,0,0,0.13);
+:root{
+  --red:#C8102E;
+  --red-dk:#A00C24;
+  --forest:#22352B;
+  --forest-lt:#33503F;
+  --ink:#17201A;
+  --body:#4A554D;
+  --mute:#7C877F;
+  --paper:#FFFFFF;
+  --sand:#EFEDE6;
+  --sand-dk:#E2DFD5;
+  --line:#D8D5CB;
+  --line-dk:rgba(255,255,255,.16);
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-html{scroll-behavior:smooth;font-size:16px;}
-body{font-family:"Lato",sans-serif;background:var(--cream);color:var(--ink);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+html{font-size:16px;background:var(--paper);}
+body{font-family:"IBM Plex Sans",system-ui,sans-serif;background:var(--paper);color:var(--body);font-size:1rem;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
 img{max-width:100%;display:block;}
 a{color:inherit;text-decoration:none;}
-button{font-family:inherit;cursor:pointer;border:none;background:none;}
-
-/* ── EYEBROW ── */
-.eyebrow{font-size:.68rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--red);display:flex;align-items:center;gap:.55rem;}
-.eyebrow::before{content:"";width:20px;height:1.5px;background:var(--red);flex-shrink:0;}
-.eyebrow.center{justify-content:center;}
-.eyebrow.center::before{display:none;}
-.eyebrow.light{color:rgba(255,255,255,.5);}
-.eyebrow.light::before{background:rgba(255,255,255,.35);}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit;}
+h1,h2,h3,h4{font-family:"Archivo",system-ui,sans-serif;color:var(--ink);line-height:1.05;text-wrap:balance;}
+:focus-visible{outline:3px solid var(--red);outline-offset:2px;}
 
 /* ── HEADER ── */
-header{position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(250,247,242,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}
-.header-wrap{max-width:1300px;margin:0 auto;padding:0 2rem;height:70px;display:flex;align-items:center;justify-content:space-between;gap:2rem;}
-.logo-wrap{flex-shrink:0;display:flex;align-items:center;}
-.logo-img{height:58px;width:auto;mix-blend-mode:multiply;}
-.nav-list{display:flex;align-items:center;gap:.1rem;list-style:none;}
-.nav-btn{padding:.5rem .95rem;font-size:.75rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--stone);border-radius:3px;transition:color .2s,background .2s;position:relative;}
-.nav-btn:hover{color:var(--ink);background:var(--linen);}
-.nav-btn.is-active{color:var(--red);}
-.nav-btn.is-active::after{content:"";position:absolute;bottom:-1px;left:.6rem;right:.6rem;height:2px;background:var(--red);border-radius:2px 2px 0 0;}
-.nav-btn.cta{margin-left:.75rem;background:var(--red);color:var(--white)!important;padding:.55rem 1.25rem;border-radius:3px;}
-.nav-btn.cta:hover{background:var(--red-dk);}
-.nav-btn.cta.is-active::after{display:none;}
+header{position:sticky;top:0;z-index:900;background:var(--paper);border-bottom:2px solid var(--ink);}
+.hwrap{max-width:1220px;margin:0 auto;padding:0 1.75rem;height:76px;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;}
+.brand{display:flex;align-items:center;gap:.85rem;flex-shrink:0;}
+.brand img{height:54px;width:auto;}
+.nav{display:flex;align-items:center;gap:.35rem;list-style:none;}
+.nav button{padding:.55rem .8rem;font-family:"Archivo",sans-serif;font-size:.82rem;font-weight:700;color:var(--ink);border-bottom:3px solid transparent;}
+.nav button:hover{color:var(--red);}
+.nav button.on{border-bottom-color:var(--red);color:var(--red);}
+.callbtn{display:inline-flex;align-items:center;gap:.5rem;margin-left:.6rem;padding:.7rem 1.1rem;background:var(--red);color:#fff;font-family:"Archivo",sans-serif;font-size:.85rem;font-weight:700;}
+.callbtn:hover{background:var(--red-dk);}
+.callbtn svg{width:15px;height:15px;stroke:#fff;stroke-width:2.2;fill:none;}
+.burger{display:none;width:44px;height:44px;align-items:center;justify-content:center;color:var(--ink);}
 
-/* ── HAMBURGER ── */
-.hamburger{display:none;align-items:center;justify-content:center;width:40px;height:40px;border-radius:4px;color:var(--ink);transition:background .2s;}
-.hamburger:hover{background:var(--linen);}
+/* ── MOBILE NAV ── */
+.mnav{display:none;position:fixed;inset:76px 0 0 0;z-index:890;background:var(--paper);transform:translateY(-100%);transition:transform .28s ease;overflow-y:auto;}
+.mnav.on{transform:translateY(0);}
+.mnav-in{padding:1rem 1.75rem 3rem;}
+.mnav button{display:block;width:100%;text-align:left;padding:1.05rem 0;font-family:"Archivo",sans-serif;font-size:1.1rem;font-weight:700;color:var(--ink);border-bottom:1px solid var(--line);}
+.mnav .mcall{margin-top:1.5rem;background:var(--red);color:#fff;text-align:center;border-bottom:none;padding:1.1rem;}
 
-/* ── MOBILE DRAWER ── */
-.mobile-nav{display:none;position:fixed;top:70px;left:0;right:0;bottom:0;z-index:998;background:var(--cream);transform:translateX(100%);transition:transform .3s cubic-bezier(.4,0,.2,1);overflow-y:auto;}
-.mobile-nav.is-open{transform:translateX(0);}
-.mobile-nav-inner{padding:1.5rem 1.5rem 3rem;}
-.mobile-nav-item{display:block;width:100%;text-align:left;padding:1rem .75rem;font-size:1rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--stone);border-bottom:1px solid var(--border);border-radius:4px;transition:color .2s,background .2s;}
-.mobile-nav-item:hover,.mobile-nav-item.is-active{color:var(--red);background:var(--linen);}
-.mobile-nav-item.cta-mobile{margin-top:1.5rem;background:var(--red);color:var(--white)!important;border-bottom:none;border-radius:4px;text-align:center;}
-.mobile-nav-item.cta-mobile:hover{background:var(--red-dk);}
-.mobile-overlay{display:none;position:fixed;top:70px;left:0;right:0;bottom:0;z-index:997;background:rgba(0,0,0,.35);}
-.mobile-overlay.is-open{display:block;}
+/* ── PAGE SWITCH ── */
+.page{display:none;}
+.page.on{display:block;}
 
-/* ── PAGES ── */
-.page{display:none;min-height:100vh;padding-top:70px;}
-.page.is-active{display:block;}
-.page.is-active .anim-in{animation:fadeUp .55s ease both;}
-.page.is-active .anim-in:nth-child(1){animation-delay:.05s;}
-.page.is-active .anim-in:nth-child(2){animation-delay:.13s;}
-.page.is-active .anim-in:nth-child(3){animation-delay:.21s;}
-.page.is-active .anim-in:nth-child(4){animation-delay:.29s;}
-.page.is-active .anim-in:nth-child(5){animation-delay:.37s;}
-@keyframes fadeUp{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
+/* ── SHARED ── */
+.wrap{max-width:1220px;margin:0 auto;padding:0 1.75rem;}
+.slab{padding:5rem 0;}
+.slab.sm{padding:3.5rem 0;}
+.sand{background:var(--sand);}
+.dark{background:var(--forest);color:rgba(255,255,255,.78);}
+.dark h2,.dark h3{color:#fff;}
+h2.big{font-size:clamp(1.9rem,3.6vw,2.9rem);font-weight:800;letter-spacing:-.02em;}
+h3.mid{font-size:1.25rem;font-weight:700;letter-spacing:-.01em;}
+.tag{display:inline-block;font-family:"Archivo",sans-serif;font-size:.75rem;font-weight:700;color:var(--red);background:rgba(200,16,46,.09);padding:.3rem .65rem;margin-bottom:1rem;}
+.dark .tag{color:#fff;background:rgba(255,255,255,.14);}
+.copy{max-width:60ch;margin-top:1.1rem;font-size:1.05rem;}
+.copy p+p{margin-top:.9rem;}
 
-/* ── BUTTONS ── */
-.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.78rem 1.7rem;font-size:.73rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border-radius:3px;transition:all .22s;cursor:pointer;border:none;font-family:"Lato",sans-serif;}
-.btn-red{background:var(--red);color:var(--white);}
-.btn-red:hover{background:var(--red-dk);transform:translateY(-2px);box-shadow:0 8px 22px rgba(193,27,46,.28);}
-.btn-outline{background:transparent;color:var(--ink);border:1.5px solid var(--border);}
-.btn-outline:hover{border-color:var(--ink);transform:translateY(-2px);}
-.btn svg{width:14px;height:14px;flex-shrink:0;}
-
-/* ── LAYOUT ── */
-.container{max-width:1240px;margin:0 auto;padding:0 2rem;}
-.section{padding:6rem 0;}
-.section-sm{padding:3.5rem 0;}
-.section-head{margin-bottom:3rem;}
-.section-head.center{text-align:center;}
-.section-h2{font-family:"Playfair Display",serif;font-size:clamp(2rem,3.2vw,2.9rem);font-weight:700;line-height:1.12;color:var(--charcoal);margin-top:.6rem;}
-.section-h2 em{font-style:italic;color:var(--red);}
-.section-sub{margin-top:.9rem;font-size:.95rem;font-weight:300;line-height:1.85;color:var(--stone);max-width:520px;}
-.section-sub.center{margin-left:auto;margin-right:auto;text-align:center;}
+.btn{display:inline-flex;align-items:center;gap:.55rem;padding:.9rem 1.5rem;font-family:"Archivo",sans-serif;font-size:.88rem;font-weight:700;transition:background .18s,color .18s,border-color .18s;}
+.btn svg{width:15px;height:15px;stroke-width:2.2;fill:none;}
+.btn-red{background:var(--red);color:#fff;}
+.btn-red:hover{background:var(--red-dk);}
+.btn-red svg{stroke:#fff;}
+.btn-ink{background:var(--ink);color:#fff;}
+.btn-ink:hover{background:#000;}
+.btn-ink svg{stroke:#fff;}
+.btn-line{border:2px solid var(--ink);color:var(--ink);}
+.btn-line:hover{background:var(--ink);color:#fff;}
+.btn-line svg{stroke:currentColor;}
+.btn-pale{border:2px solid rgba(255,255,255,.4);color:#fff;}
+.btn-pale:hover{background:#fff;color:var(--forest);}
+.btn-pale svg{stroke:currentColor;}
+.btns{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.9rem;}
 
 /* ── HERO ── */
-.hero{display:grid;grid-template-columns:1fr 1fr;min-height:calc(100vh - 70px);overflow:hidden;}
-.hero-left{display:flex;flex-direction:column;justify-content:center;padding:5rem 4rem 5rem 6rem;background:var(--cream);}
-.hero-tagline{font-size:.7rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--red);display:flex;align-items:center;gap:.6rem;margin-bottom:1.8rem;}
-.hero-tagline::before{content:"";width:22px;height:1.5px;background:var(--red);}
-.hero-h1{font-family:"Playfair Display",serif;font-size:clamp(3rem,4.5vw,4.8rem);font-weight:700;line-height:1.04;color:var(--charcoal);margin-bottom:1.6rem;}
-.hero-h1 em{font-style:italic;color:var(--red);}
-.hero-body{font-size:1.02rem;font-weight:300;line-height:1.88;color:var(--stone);max-width:420px;margin-bottom:2.5rem;}
-.hero-btns{display:flex;gap:.875rem;flex-wrap:wrap;}
-.hero-kpi{display:flex;gap:2.5rem;margin-top:3.5rem;padding-top:2.5rem;border-top:1px solid var(--warm);}
-.kpi-num{font-family:"Playfair Display",serif;font-size:2.3rem;font-weight:700;color:var(--red);line-height:1;}
-.kpi-label{margin-top:.2rem;font-size:.65rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--dust);}
-.hero-right{position:relative;background:var(--black);overflow:hidden;}
-.hero-photo-single{position:absolute;inset:0;background:url("group_photo.png") center/cover no-repeat;filter:brightness(.8) saturate(.95);}
-.hero-scrim{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 55%,rgba(10,5,3,.45) 100%);}
+.hero{position:relative;background:var(--forest);}
+.hero-img{height:min(62vw,600px);background:url("group_photo.png") center 28%/cover no-repeat;}
+.hero-panel{position:relative;max-width:1220px;margin:-9rem auto 0;padding:0 1.75rem;}
+.hero-box{background:var(--red);color:#fff;max-width:730px;padding:3rem 3rem 2.6rem;}
+.hero-eye{font-family:"Archivo",sans-serif;font-size:.8rem;font-weight:700;color:rgba(255,255,255,.85);margin-bottom:1.1rem;}
+.hero-box h1{color:#fff;font-size:clamp(2.1rem,4.6vw,3.7rem);font-weight:800;letter-spacing:-.025em;text-transform:uppercase;}
+.hero-box p{margin-top:1.2rem;font-size:1.08rem;color:rgba(255,255,255,.93);max-width:52ch;}
+.hero-box .btns{margin-top:1.8rem;}
+.btn-white{background:#fff;color:var(--red);}
+.btn-white:hover{background:var(--sand);}
+.btn-white svg{stroke:currentColor;}
+.btn-clear{border:2px solid rgba(255,255,255,.55);color:#fff;}
+.btn-clear:hover{background:rgba(255,255,255,.14);border-color:#fff;}
 
-/* ── WHY STRIP ── */
-.why-strip{background:var(--charcoal);padding:4.5rem 0;}
-.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.08);border-radius:6px;overflow:hidden;}
-.why-item{padding:2.25rem 1.75rem;background:var(--charcoal);transition:background .25s;}
-.why-item:hover{background:#333;}
-.why-icon{margin-bottom:.85rem;color:var(--red);}
-.why-icon svg{width:22px;height:22px;stroke:var(--red);stroke-width:1.75;fill:none;stroke-linecap:round;stroke-linejoin:round;}
-.why-title{font-family:"Playfair Display",serif;font-size:1.05rem;font-weight:700;color:var(--white);margin-bottom:.5rem;}
-.why-body{font-size:.84rem;font-weight:300;line-height:1.8;color:rgba(255,255,255,.55);}
+/* ── FACT LINE ── */
+.factline{background:var(--ink);color:#fff;}
+.factline .wrap{display:flex;flex-wrap:wrap;gap:.5rem 2.25rem;padding-top:1.05rem;padding-bottom:1.05rem;font-family:"Archivo",sans-serif;font-size:.86rem;font-weight:600;}
+.factline span{display:flex;align-items:center;gap:.55rem;}
+.factline b{color:var(--red);font-size:1.1rem;line-height:1;}
 
-/* ── EVENTS ── */
-.events-section{background:var(--linen);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
-.events-chips{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem;}
-.chip{display:flex;align-items:center;gap:.5rem;padding:.5rem 1.1rem;background:var(--white);border:1px solid var(--border);border-radius:40px;font-size:.82rem;font-weight:400;color:var(--ink);transition:all .2s;cursor:default;}
-.chip svg{width:14px;height:14px;flex-shrink:0;stroke:var(--dust);stroke-width:1.75;fill:none;stroke-linecap:round;stroke-linejoin:round;transition:stroke .2s;}
-.chip:hover{border-color:var(--red);color:var(--red);transform:translateY(-2px);box-shadow:var(--shadow-sm);}
-.chip:hover svg{stroke:var(--red);}
+/* ── MENU CARD ── */
+.card{background:var(--paper);border:2px solid var(--ink);}
+.card-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:.5rem 1.5rem;background:var(--ink);color:#fff;padding:1.15rem 1.75rem;}
+.card-top h3{color:#fff;font-size:1.15rem;font-weight:700;}
+.card-top span{font-family:"Archivo",sans-serif;font-size:.82rem;font-weight:600;color:rgba(255,255,255,.65);}
+.days{display:grid;grid-template-columns:repeat(3,1fr);}
+.day{padding:1.9rem 1.75rem;border-right:1px solid var(--line);}
+.day:last-child{border-right:none;}
+.day h4{font-size:1.45rem;font-weight:800;color:var(--red);letter-spacing:-.01em;margin-bottom:1.25rem;}
+.day dl{display:flex;flex-direction:column;gap:1rem;}
+.day dt{font-family:"Archivo",sans-serif;font-size:.76rem;font-weight:700;color:var(--mute);text-transform:uppercase;letter-spacing:.04em;}
+.day dd{font-size:.96rem;color:var(--ink);margin-top:.15rem;}
+.card-foot{border-top:1px solid var(--line);background:var(--sand);padding:1.1rem 1.75rem;font-size:.92rem;}
+.card-foot strong{color:var(--ink);font-weight:600;}
 
-/* ── MENU ── */
-.menu-hero{background:var(--charcoal);padding:5rem 0;text-align:center;background-image:radial-gradient(circle at 80% 20%,rgba(193,27,46,.12) 0%,transparent 55%),radial-gradient(circle at 20% 80%,rgba(193,27,46,.08) 0%,transparent 50%);}
-.menu-hero h1{font-family:"Playfair Display",serif;font-size:clamp(2.4rem,4vw,4rem);font-weight:700;color:var(--white);line-height:1.1;}
-.menu-hero h1 em{font-style:italic;color:var(--red-lt);}
-.menu-hero p{margin:.9rem auto 0;font-size:.95rem;font-weight:300;line-height:1.85;color:rgba(255,255,255,.55);max-width:500px;}
-.menu-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;max-width:1000px;margin:0 auto;padding:5rem 2rem;}
-.menu-card{background:var(--white);border:1px solid var(--border);border-radius:8px;overflow:hidden;transition:transform .25s,box-shadow .25s;text-decoration:none;display:block;}
-.menu-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);}
-.menu-card-stripe{height:4px;background:var(--red);}
-.menu-card.alt .menu-card-stripe{background:var(--warm);}
-.menu-card-body{padding:2.25rem;}
-.menu-cat{font-size:.66rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:.5rem;display:flex;align-items:center;gap:.4rem;}
-.menu-cat svg{width:13px;height:13px;stroke:var(--red);stroke-width:1.75;fill:none;stroke-linecap:round;stroke-linejoin:round;}
-.menu-card.alt .menu-cat{color:var(--stone);}
-.menu-card.alt .menu-cat svg{stroke:var(--stone);}
-.menu-title{font-family:"Playfair Display",serif;font-size:1.5rem;font-weight:700;color:var(--charcoal);margin-bottom:.7rem;}
-.menu-desc{font-size:.87rem;font-weight:300;line-height:1.82;color:var(--stone);margin-bottom:1.75rem;}
-.menu-link{display:inline-flex;align-items:center;gap:.5rem;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--red);transition:gap .2s;}
-.menu-link:hover{gap:.9rem;}
-.menu-link svg{width:14px;height:14px;stroke:var(--red);stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round;}
-.menu-note{max-width:1000px;margin:0 auto;padding:0 2rem 5rem;}
-.menu-note-box{background:var(--linen);border:1px solid var(--border);border-radius:8px;padding:1.6rem 2rem;font-size:.87rem;font-weight:300;line-height:1.85;color:var(--stone);text-align:center;font-style:italic;}
-.menu-note-box a{color:var(--red);font-weight:600;font-style:normal;}
+/* ── SPLIT ── */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start;}
+.split.wide{grid-template-columns:1.1fr 1fr;}
+.checks{list-style:none;display:flex;flex-direction:column;}
+.checks li{display:flex;gap:.85rem;padding:.8rem 0;border-bottom:1px solid var(--line);font-size:1rem;color:var(--ink);}
+.checks li:last-child{border-bottom:none;}
+.checks svg{width:17px;height:17px;flex-shrink:0;margin-top:.28rem;stroke:var(--red);stroke-width:3;fill:none;}
+.dark .checks li{border-bottom-color:var(--line-dk);color:#fff;}
+.dark .checks svg{stroke:#fff;}
 
-/* ── ABOUT ── */
-.about-hero{background:var(--charcoal);padding:5.5rem 0;background-image:radial-gradient(circle at 70% 50%,rgba(193,27,46,.1) 0%,transparent 60%);}
-.about-hero h1{font-family:"Playfair Display",serif;font-size:clamp(2.5rem,4.5vw,4.2rem);font-weight:700;color:var(--white);line-height:1.08;margin-top:.6rem;}
-.about-hero h1 em{font-style:italic;color:var(--red-lt);}
-.about-hero p{margin-top:1rem;font-size:.97rem;font-weight:300;line-height:1.85;color:rgba(255,255,255,.55);max-width:520px;}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;padding:6rem 0;}
-.about-copy p{font-size:.97rem;font-weight:300;line-height:1.92;color:var(--stone);margin-bottom:1.1rem;}
-blockquote.pull{margin-top:2rem;padding:1.4rem 1.75rem;border-left:3px solid var(--red);background:var(--white);border-radius:0 6px 6px 0;}
-blockquote.pull p{font-family:"Playfair Display",serif;font-style:italic;font-size:1.18rem;line-height:1.65;color:var(--charcoal);margin:0;}
-.team-stack{display:flex;flex-direction:column;gap:1.4rem;}
-.team-card{display:grid;grid-template-columns:108px 1fr;background:var(--white);border:1px solid var(--border);border-radius:8px;overflow:hidden;transition:transform .25s,box-shadow .25s;}
-.team-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);}
-.team-photo{width:108px;height:148px;object-fit:cover;filter:sepia(6%) saturate(1.05);}
-.team-photo-fb{width:108px;height:148px;display:flex;align-items:center;justify-content:center;background:var(--linen);font-size:2.5rem;}
-.team-info{padding:1.4rem 1.6rem;}
-.team-name{font-family:"Playfair Display",serif;font-size:1.15rem;font-weight:700;color:var(--charcoal);}
-.team-role{font-size:.66rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--red);margin:.15rem 0 .75rem;display:flex;align-items:center;gap:.35rem;}
-.team-role svg{width:12px;height:12px;stroke:var(--red);stroke-width:1.75;fill:none;stroke-linecap:round;stroke-linejoin:round;}
-.team-bio{font-size:.84rem;font-weight:300;line-height:1.8;color:var(--stone);}
+/* ── SUPPLIERS ── */
+.sups{display:grid;grid-template-columns:repeat(3,1fr);gap:0 2.5rem;margin-top:1.75rem;}
+.sup{padding:1.1rem 0;border-top:2px solid var(--ink);}
+.sup b{display:block;font-family:"Archivo",sans-serif;font-size:clamp(1.15rem,1.7vw,1.45rem);font-weight:800;letter-spacing:-.01em;color:var(--ink);}
+.sup span{font-size:.9rem;color:var(--body);}
 
-/* ── CATERING ── */
-.catering-hero{background:var(--red);padding:5rem 0;background-image:radial-gradient(circle at 85% 30%,rgba(255,255,255,.08) 0%,transparent 55%);text-align:center;}
-.catering-hero h1{font-family:"Playfair Display",serif;font-size:clamp(2.4rem,4vw,4rem);font-weight:700;color:var(--white);line-height:1.1;}
-.catering-hero h1 em{font-style:italic;}
-.catering-hero p{margin:.9rem auto 0;font-size:.97rem;font-weight:300;color:rgba(255,255,255,.8);max-width:540px;line-height:1.85;}
-.event-types-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:3rem;}
-.event-type-card{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:2rem 1.75rem;transition:transform .25s,box-shadow .25s;}
-.event-type-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);}
-.etc-icon{margin-bottom:.9rem;display:flex;align-items:center;}
-.etc-icon svg{width:26px;height:26px;stroke:var(--red);stroke-width:1.5;fill:none;stroke-linecap:round;stroke-linejoin:round;}
-.etc-title{font-family:"Playfair Display",serif;font-size:1.05rem;font-weight:700;color:var(--charcoal);margin-bottom:.4rem;}
-.etc-body{font-size:.84rem;font-weight:300;line-height:1.78;color:var(--stone);}
-.catering-how{background:var(--linen);padding:5rem 0;border-top:1px solid var(--border);}
-.how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:3rem;}
-.how-step{text-align:center;padding:2rem 1.25rem;}
-.step-num{font-family:"Playfair Display",serif;font-size:2.4rem;font-weight:700;color:var(--red);line-height:1;margin-bottom:.75rem;}
-.step-title{font-family:"Playfair Display",serif;font-size:1rem;font-weight:700;color:var(--charcoal);margin-bottom:.4rem;}
-.step-body{font-size:.83rem;font-weight:300;line-height:1.78;color:var(--stone);}
-.catering-cta{background:var(--charcoal);padding:5rem 0;text-align:center;}
-.catering-cta h2{font-family:"Playfair Display",serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;color:var(--white);line-height:1.15;margin-top:.6rem;}
-.catering-cta p{margin:.9rem auto 2rem;font-size:.95rem;font-weight:300;color:rgba(255,255,255,.55);max-width:480px;line-height:1.85;}
+/* ── TABLE ── */
+.tbl{width:100%;border-collapse:collapse;font-size:.96rem;}
+.tbl th{text-align:left;font-family:"Archivo",sans-serif;font-size:.76rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:rgba(255,255,255,.5);padding-bottom:.6rem;border-bottom:1px solid var(--line-dk);}
+.tbl td{padding:.85rem 0;border-bottom:1px solid var(--line-dk);color:#fff;}
+.tbl td.r{text-align:right;color:rgba(255,255,255,.6);white-space:nowrap;}
+
+/* ── CALL BAND ── */
+.callband{background:var(--red);color:#fff;padding:3.5rem 0;}
+.callband h2{color:#fff;font-size:clamp(1.7rem,3.2vw,2.5rem);font-weight:800;letter-spacing:-.02em;}
+.callband p{margin-top:.9rem;font-size:1.05rem;color:rgba(255,255,255,.92);max-width:56ch;}
+.callband .num{display:inline-block;margin-top:1.6rem;font-family:"Archivo",sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;color:#fff;letter-spacing:-.02em;border-bottom:4px solid rgba(255,255,255,.5);}
+.callband .num:hover{border-bottom-color:#fff;}
+.callband .or{margin-top:1.2rem;font-size:.95rem;color:rgba(255,255,255,.85);}
+.callband .or button{font-weight:600;color:#fff;border-bottom:2px solid rgba(255,255,255,.6);}
+
+/* ── PAGE HEADER ── */
+.phead{background:var(--forest);padding:4rem 0;}
+.phead h1{color:#fff;font-size:clamp(2.1rem,4.4vw,3.4rem);font-weight:800;letter-spacing:-.025em;text-transform:uppercase;}
+.phead p{margin-top:1.1rem;max-width:60ch;font-size:1.05rem;color:rgba(255,255,255,.8);}
+
+/* ── PROVISIONS ── */
+.prov{display:grid;grid-template-columns:1.15fr 1fr;border:2px solid var(--ink);background:var(--paper);}
+.prov-a{padding:2.5rem;border-right:2px solid var(--ink);}
+.prov-b{padding:2.5rem;background:var(--sand);}
+.deflist{list-style:none;margin-top:1.4rem;}
+.deflist li{padding:.85rem 0;border-bottom:1px solid var(--line);font-size:.96rem;}
+.deflist li:last-child{border-bottom:none;}
+.deflist b{font-family:"Archivo",sans-serif;font-weight:700;color:var(--ink);}
+.steps{list-style:none;counter-reset:s;margin-top:1.2rem;}
+.steps li{counter-increment:s;display:flex;gap:.9rem;padding:.6rem 0;font-size:.96rem;color:var(--ink);}
+.steps li::before{content:counter(s);font-family:"Archivo",sans-serif;font-size:.78rem;font-weight:700;color:#fff;background:var(--red);width:22px;height:22px;flex-shrink:0;display:flex;align-items:center;justify-content:center;margin-top:.15rem;}
+
+/* ── TEAM ── */
+.team{display:flex;flex-direction:column;gap:1.5rem;}
+.person{display:grid;grid-template-columns:150px 1fr;gap:1.6rem;background:var(--paper);border:1px solid var(--line);padding:1.5rem;}
+.person img{width:150px;height:190px;object-fit:cover;}
+.person .fb{width:150px;height:190px;display:flex;align-items:center;justify-content:center;background:var(--sand);font-size:2.5rem;}
+.person h3{font-size:1.2rem;font-weight:700;}
+.person .role{display:inline-block;margin:.35rem 0 .7rem;font-family:"Archivo",sans-serif;font-size:.74rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#fff;background:var(--red);padding:.16rem .5rem;}
+.person p{font-size:.95rem;}
+.quote{margin-top:2rem;background:var(--forest);color:#fff;padding:2rem 2.25rem;}
+.quote p{font-size:1.15rem;font-style:italic;color:#fff;}
+.quote cite{display:block;margin-top:.9rem;font-family:"Archivo",sans-serif;font-size:.78rem;font-weight:700;font-style:normal;color:rgba(255,255,255,.55);text-transform:uppercase;letter-spacing:.05em;}
 
 /* ── CONTACT ── */
-.contact-layout{display:grid;grid-template-columns:1fr 1.3fr;gap:5rem;align-items:start;padding:6rem 0;}
-.contact-left h1{font-family:"Playfair Display",serif;font-size:clamp(2rem,3vw,3rem);font-weight:700;line-height:1.1;color:var(--charcoal);margin:.5rem 0 1rem;}
-.contact-left h1 em{font-style:italic;color:var(--red);}
-.contact-left > p{font-size:.95rem;font-weight:300;line-height:1.9;color:var(--stone);margin-bottom:2.5rem;}
-.contact-list{display:flex;flex-direction:column;gap:.9rem;}
-.contact-item{display:flex;align-items:center;gap:.9rem;}
-.contact-dot{width:40px;height:40px;flex-shrink:0;background:var(--red);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--white);}
-.contact-dot svg{width:16px;height:16px;stroke:var(--white);stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round;}
-.contact-text strong{display:block;font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--dust);margin-bottom:.1rem;}
-.contact-text a,.contact-text span{font-size:.92rem;color:var(--ink);}
-.contact-text a{color:var(--red);font-weight:600;}
-.contact-form-box{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:2.6rem;}
-.form-head{border-bottom:1px solid var(--linen);padding-bottom:1.4rem;margin-bottom:2rem;}
-.form-title{font-family:"Playfair Display",serif;font-size:1.4rem;font-weight:700;color:var(--charcoal);}
-.form-subtitle{font-size:.8rem;font-weight:300;color:var(--dust);margin-top:.25rem;}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
-.form-group{display:flex;flex-direction:column;gap:.32rem;margin-bottom:.9rem;}
-.form-group label{font-size:.67rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);}
-.form-group input,.form-group select,.form-group textarea{padding:.68rem .9rem;border:1.5px solid var(--border);border-radius:5px;font-family:"Lato",sans-serif;font-size:.88rem;font-weight:300;color:var(--ink);background:var(--cream);outline:none;transition:border-color .2s,box-shadow .2s;-webkit-appearance:none;}
-.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--red);box-shadow:0 0 0 3px rgba(193,27,46,.09);background:var(--white);}
-.form-group textarea{resize:vertical;min-height:105px;}
-.form-group select{cursor:pointer;}
-.btn-submit{width:100%;padding:.9rem;background:var(--red);color:var(--white);border:none;border-radius:5px;font-family:"Lato",sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:background .2s,transform .15s,box-shadow .2s;display:flex;align-items:center;justify-content:center;gap:.5rem;}
-.btn-submit svg{width:15px;height:15px;stroke:var(--white);stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round;}
-.btn-submit:hover{background:var(--red-dk);transform:translateY(-2px);box-shadow:0 8px 22px rgba(193,27,46,.28);}
-.btn-submit:disabled{opacity:.6;cursor:not-allowed;transform:none;box-shadow:none;}
-.form-error{display:none;background:rgba(193,27,46,.07);border:1px solid rgba(193,27,46,.25);border-radius:5px;padding:.75rem 1rem;font-size:.83rem;color:var(--red);margin-bottom:1rem;text-align:center;}
-.form-success{display:none;text-align:center;padding:3rem 1rem;}
-.success-check{width:60px;height:60px;background:rgba(193,27,46,.09);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1.3rem;color:var(--red);}
-.success-check svg{width:28px;height:28px;stroke:var(--red);stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round;}
-.form-success h3{font-family:"Playfair Display",serif;font-size:1.6rem;font-weight:700;color:var(--charcoal);}
-.form-success p{font-size:.9rem;font-weight:300;color:var(--stone);line-height:1.8;margin-top:.5rem;}
-.form-success a{color:var(--red);font-weight:600;}
-
-/* ── ORDER ── */
-.order-hero{background:var(--cream);border-bottom:1px solid var(--border);padding:5rem 0;text-align:center;}
-.order-hero h1{font-family:"Playfair Display",serif;font-size:clamp(2.4rem,4vw,4rem);font-weight:700;color:var(--charcoal);line-height:1.1;}
-.order-hero h1 em{font-style:italic;color:var(--red);}
-.order-hero p{margin:.9rem auto 0;font-size:.95rem;font-weight:300;color:var(--stone);max-width:520px;line-height:1.85;}
-.order-options{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;padding:5rem 0;}
-.order-card{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:2.5rem 2rem;text-align:center;transition:transform .25s,box-shadow .25s;}
-.order-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg);}
-.order-card-icon{display:flex;justify-content:center;margin-bottom:1.1rem;}
-.order-card-icon svg{width:32px;height:32px;stroke:var(--red);stroke-width:1.5;fill:none;stroke-linecap:round;stroke-linejoin:round;}
-.order-card h3{font-family:"Playfair Display",serif;font-size:1.2rem;font-weight:700;color:var(--charcoal);margin-bottom:.5rem;}
-.order-card p{font-size:.85rem;font-weight:300;line-height:1.8;color:var(--stone);margin-bottom:1.75rem;}
-.order-card .badge{display:inline-block;padding:.25rem .75rem;border-radius:20px;font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:rgba(193,27,46,.09);color:var(--red);margin-bottom:1.4rem;}
+.cgrid{display:grid;grid-template-columns:1fr 1.1fr;gap:3.5rem;align-items:start;}
+.cnums{margin-top:2rem;}
+.cnum{display:flex;justify-content:space-between;align-items:baseline;gap:1.5rem;padding:.95rem 0;border-bottom:1px solid var(--line);}
+.cnum b{font-family:"Archivo",sans-serif;font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--mute);}
+.cnum a{font-family:"Archivo",sans-serif;font-size:1.05rem;font-weight:700;color:var(--red);}
+.cnum a:hover{text-decoration:underline;}
+.cnum span{font-size:.98rem;color:var(--ink);}
+.form{background:var(--sand);border:2px solid var(--ink);padding:2.25rem;}
+.form h3{font-size:1.3rem;font-weight:700;}
+.form .sub{margin-top:.35rem;padding-bottom:1.3rem;margin-bottom:1.5rem;border-bottom:1px solid var(--line);font-size:.94rem;}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;}
+.fg{display:flex;flex-direction:column;gap:.35rem;margin-bottom:.95rem;}
+.fg label{font-family:"Archivo",sans-serif;font-size:.76rem;font-weight:700;color:var(--ink);}
+.fg input,.fg textarea{padding:.75rem .85rem;border:2px solid var(--line);background:var(--paper);font-family:"IBM Plex Sans",sans-serif;font-size:.96rem;color:var(--ink);outline:none;border-radius:0;-webkit-appearance:none;transition:border-color .18s;}
+.fg input:focus,.fg textarea:focus{border-color:var(--red);}
+.fg textarea{resize:vertical;min-height:110px;}
+.send{width:100%;padding:1rem;background:var(--red);color:#fff;font-family:"Archivo",sans-serif;font-size:.92rem;font-weight:700;transition:background .18s;}
+.send:hover{background:var(--red-dk);}
+.send:disabled{opacity:.6;cursor:not-allowed;}
+.err{display:none;background:#fff;border-left:5px solid var(--red);padding:.8rem 1rem;font-size:.93rem;color:var(--ink);margin-bottom:1rem;}
+.done{display:none;text-align:center;padding:2.5rem 1rem;}
+.done h3{font-size:1.5rem;}
+.done p{margin-top:.7rem;font-size:.98rem;}
+.done a{color:var(--red);font-weight:600;}
 
 /* ── FOOTER ── */
-footer{background:var(--black);}
-.footer-main{display:grid;grid-template-columns:auto 1fr auto;gap:2.5rem;align-items:center;padding:2.75rem 2rem;max-width:1240px;margin:0 auto;}
-.footer-logo img{height:48px;width:auto;mix-blend-mode:screen;opacity:.82;}
-.footer-nav{display:flex;gap:.1rem;flex-wrap:wrap;justify-content:center;}
-.footer-nav button{padding:.4rem .85rem;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.38);border-radius:3px;transition:color .2s;}
-.footer-nav button:hover{color:rgba(255,255,255,.78);}
-.footer-copy{font-size:.72rem;color:rgba(255,255,255,.22);text-align:right;line-height:1.65;}
-.footer-strip{border-top:1px solid rgba(255,255,255,.06);max-width:1240px;margin:0 auto;padding:1.4rem 2rem;display:flex;gap:2rem;flex-wrap:wrap;justify-content:center;}
-.footer-strip a,.footer-strip span{font-size:.8rem;color:rgba(255,255,255,.38);transition:color .2s;}
-.footer-strip a:hover{color:rgba(255,255,255,.72);}
+footer{background:var(--ink);color:rgba(255,255,255,.6);padding:3rem 0 2rem;}
+.fgrid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:2.5rem;}
+footer h4{font-family:"Archivo",sans-serif;font-size:.8rem;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.07em;margin-bottom:1rem;}
+footer img{height:52px;width:auto;margin-bottom:1rem;}
+footer a:hover{color:#fff;}
+.flist{list-style:none;display:flex;flex-direction:column;gap:.55rem;font-size:.94rem;}
+.fbase{margin-top:2.5rem;padding-top:1.4rem;border-top:1px solid rgba(255,255,255,.12);display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;justify-content:space-between;font-size:.86rem;color:rgba(255,255,255,.4);}
 
 /* ── RESPONSIVE ── */
-@media(max-width:1024px){
-  .why-grid{grid-template-columns:1fr 1fr;}
-  .event-types-grid{grid-template-columns:1fr 1fr;}
-  .how-steps{grid-template-columns:1fr 1fr;}
-  .order-options{grid-template-columns:1fr 1fr;}
+@media(max-width:960px){
+  .days{grid-template-columns:1fr;}
+  .day{border-right:none;border-bottom:1px solid var(--line);}
+  .day:last-child{border-bottom:none;}
+  .split,.split.wide,.prov,.cgrid,.fgrid{grid-template-columns:1fr;gap:2.25rem;}
+  .prov-a{border-right:none;border-bottom:2px solid var(--ink);}
+  .sups{grid-template-columns:1fr;}
+  .hero-panel{margin-top:-5rem;}
+  .hero-box{padding:2.25rem 1.75rem 2rem;}
 }
-@media(max-width:768px){
-  .header-wrap{padding:0 1.25rem;}
-  .nav-list{display:none;}
-  .hamburger{display:flex;}
-  .mobile-nav{display:block;}
-  .hero{grid-template-columns:1fr;}
-  .hero-left{padding:3rem 1.5rem;}
-  .hero-right{height:56vw;min-height:240px;}
-  .about-grid,.contact-layout{grid-template-columns:1fr;gap:2.5rem;padding:3rem 0;}
-  .menu-cards{grid-template-columns:1fr;gap:1.25rem;padding:3rem 1.25rem;}
-  .why-grid,.event-types-grid,.how-steps,.order-options{grid-template-columns:1fr;}
-  .footer-main{grid-template-columns:1fr;gap:1.5rem;text-align:center;}
-  .footer-copy{text-align:center;}
-  .container{padding:0 1.25rem;}
-  .form-row{grid-template-columns:1fr;}
-  .section{padding:3.5rem 0;}
-  .hero-kpi{gap:1.5rem;}
-  .hero-left{padding:2.5rem 1.25rem;}
-  .order-options{grid-template-columns:1fr;padding:3rem 0;}
-  .catering-cta{padding:3.5rem 0;}
+@media(max-width:780px){
+  .nav{display:none;}
+  .burger{display:flex;}
+  .mnav{display:block;}
+  .hwrap{padding:0 1.25rem;}
+  .wrap{padding:0 1.25rem;}
+  .slab{padding:3.25rem 0;}
+  .hero-img{height:56vw;min-height:230px;}
+  .hero-panel{margin-top:0;padding:0;}
+  .hero-box{max-width:none;}
+  .frow{grid-template-columns:1fr;}
+  .prov-a,.prov-b,.form{padding:1.6rem 1.4rem;}
+  .person{grid-template-columns:1fr;}
+  .person img,.person .fb{width:100%;height:230px;}
+  .fbase{flex-direction:column;}
+}
+@media(prefers-reduced-motion:reduce){
+  *{transition:none!important;animation:none!important;}
 }
 </style>
 </head>
 <body>
 
 <header>
-  <div class="header-wrap">
-    <div class="logo-wrap">
-      <img class="logo-img" src="logo.png" alt="Ash &amp; Kel's Kitchen" onerror="this.style.display='none'">
-    </div>
+  <div class="hwrap">
+    <a class="brand" href="#" onclick="go('home');return false;">
+      <img src="logo.png" alt="Ash &amp; Kel's Kitchen" onerror="this.style.display='none'">
+    </a>
     <nav>
-      <ul class="nav-list">
-        <li><button class="nav-btn is-active" data-page="home">Home</button></li>
-        <li><button class="nav-btn" data-page="menu">Menu</button></li>
-        <li><button class="nav-btn" data-page="about">About Us</button></li>
-        <li><button class="nav-btn" data-page="catering">Camp Catering</button></li>
-        <li><button class="nav-btn" data-page="contact">Contact</button></li>
-        <li><button class="nav-btn cta" data-page="order">Order Online</button></li>
+      <ul class="nav">
+        <li><button class="on" data-p="home">Home</button></li>
+        <li><button data-p="menus">Camp Menus</button></li>
+        <li><button data-p="about">About Us</button></li>
+        <li><button data-p="contact">Contact</button></li>
+        <li><a class="callbtn" href="tel:0430165007">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.43 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.64a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          0430 165 007
+        </a></li>
       </ul>
-      <!-- Hamburger for mobile -->
-      <button class="hamburger" id="hamburger-btn" aria-label="Open menu">
-        <svg id="ham-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="3" y1="6" x2="21" y2="6"/>
-          <line x1="3" y1="12" x2="21" y2="12"/>
-          <line x1="3" y1="18" x2="21" y2="18"/>
+      <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
+        <svg id="bicon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round">
+          <line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="13" x2="21" y2="13"/><line x1="3" y1="19" x2="21" y2="19"/>
         </svg>
       </button>
     </nav>
   </div>
 </header>
 
-<!-- Mobile nav drawer -->
-<div class="mobile-overlay" id="mobile-overlay"></div>
-<div class="mobile-nav" id="mobile-nav">
-  <div class="mobile-nav-inner">
-    <button class="mobile-nav-item is-active" data-page="home">Home</button>
-    <button class="mobile-nav-item" data-page="menu">Menu</button>
-    <button class="mobile-nav-item" data-page="about">About Us</button>
-    <button class="mobile-nav-item" data-page="catering">Camp Catering</button>
-    <button class="mobile-nav-item" data-page="contact">Contact</button>
-    <button class="mobile-nav-item cta-mobile" data-page="order">Order Online</button>
+<div class="mnav" id="mnav">
+  <div class="mnav-in">
+    <button data-p="home">Home</button>
+    <button data-p="menus">Camp Menus</button>
+    <button data-p="about">About Us</button>
+    <button data-p="contact">Contact</button>
+    <a class="mnav-call" href="tel:0430165007"><button class="mcall">Call Kel — 0430 165 007</button></a>
   </div>
 </div>
 
-<!-- ══ HOME ══ -->
-<div class="page is-active" id="page-home">
+<!-- ═══ HOME ═══ -->
+<div class="page on" id="p-home">
+
   <section class="hero">
-    <div class="hero-left">
-      <div class="hero-tagline anim-in">Adelaide Hills Camp Catering</div>
-      <h1 class="hero-h1 anim-in">Camp<br>Catering with a<br><em>Difference.</em></h1>
-      <p class="hero-body anim-in">Team Ashley and Kelly Parr — the real life version of the Cook and the Chef. Freshly prepared, hearty food for school camps, retreats and group stays across the Adelaide Hills.</p>
-      <div class="hero-btns anim-in">
-        <button class="btn btn-red" onclick="goPage('contact')">Make an Enquiry
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </button>
-        <button class="btn btn-outline" onclick="goPage('menu')">View Our Menus</button>
+    <div class="hero-img"></div>
+    <div class="hero-panel">
+      <div class="hero-box">
+        <div class="hero-eye">Resident caterers at Woodhouse Adventure Park</div>
+        <h1>You worry about the fun. We'll handle the fuel.</h1>
+        <p>Ash and Kel feed school camps across the Adelaide Hills. Three meals a day, snacks in between, and bowls of fruit out for the kids to help themselves.</p>
+        <div class="btns">
+          <button class="btn btn-white" onclick="go('menus')">See the camp menu
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+          <button class="btn btn-clear" onclick="go('contact')">Book your camp</button>
+        </div>
       </div>
-      <div class="hero-kpi anim-in">
-        <div><div class="kpi-num">10+</div><div class="kpi-label">Years Experience</div></div>
-        <div><div class="kpi-num">4+</div><div class="kpi-label">Years Catering</div></div>
-        <div><div class="kpi-num">100%</div><div class="kpi-label">Fresh Produce</div></div>
-      </div>
-    </div>
-    <div class="hero-right">
-      <div class="hero-photo-single"></div>
-      <div class="hero-scrim"></div>
     </div>
   </section>
 
-  <div class="why-strip">
-    <div class="container">
-      <div class="why-grid">
-        <div class="why-item">
-          <div class="why-icon">
-            <!-- Lucide: leaf -->
-            <svg viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
-          </div>
-          <div class="why-title">Local &amp; Fresh</div>
-          <p class="why-body">We source from local Adelaide Hills suppliers — Hahndorf Fruit &amp; Veg, Crafers Bakehouse and Woodside Butcher. The freshest ingredients, straight to your camp.</p>
-        </div>
-        <div class="why-item">
-          <div class="why-icon">
-            <!-- Lucide: chef-hat -->
-            <svg viewBox="0 0 24 24"><path d="M6 13.87A4 4 0 0 1 7.41 6a5.11 5.11 0 0 1 1.05-1.54 5 5 0 0 1 7.08 0A5.11 5.11 0 0 1 16.59 6 4 4 0 0 1 18 13.87V21H6Z"/><line x1="6" y1="17" x2="18" y2="17"/><line x1="6" y1="21" x2="18" y2="21"/></svg>
-          </div>
-          <div class="why-title">Professionally Trained</div>
-          <p class="why-body">Ashley's decade of experience in Adelaide's top kitchens guarantees quality in every dish.</p>
-        </div>
-        <div class="why-item">
-          <div class="why-icon">
-            <!-- Lucide: map -->
-            <svg viewBox="0 0 24 24"><path d="M15 5.5v15M9 3.5v15"/><path d="M21 5.4v13.4a1 1 0 0 1-.7.95l-5 1.6a1 1 0 0 1-.6 0l-5.4-1.7a1 1 0 0 0-.6 0l-4.4 1.4a1 1 0 0 1-1.3-.95V6.7a1 1 0 0 1 .7-.95l5-1.6a1 1 0 0 1 .6 0l5.4 1.7a1 1 0 0 0 .6 0l4.4-1.4a1 1 0 0 1 1.3.95Z"/></svg>
-          </div>
-          <div class="why-title">Happy to Travel</div>
-          <p class="why-body">Camp isn't down the road? No problem — we're happy to travel to your site for an additional fee.</p>
-        </div>
-        <div class="why-item">
-          <div class="why-icon">
-            <!-- Lucide: heart -->
-            <svg viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
-          </div>
-          <div class="why-title">Personal Touch</div>
-          <p class="why-body">Freshly brewed coffee and Tim Tams for the adults, right down to looking after the kids who might be on the fussy side.</p>
-        </div>
-      </div>
+  <div class="factline">
+    <div class="wrap">
+      <span><b>·</b> Nut-free kitchen</span>
+      <span><b>·</b> Most allergies and dietaries catered</span>
+      <span><b>·</b> Based at Woodhouse, Piccadilly</span>
+      <span><b>·</b> Happy to travel for a fee</span>
     </div>
   </div>
 
-  <div class="events-section section-sm">
-    <div class="container">
-      <div class="section-head">
-        <div class="eyebrow">We Cater For</div>
-        <h2 class="section-h2">Camps &amp; <em>Groups</em></h2>
+  <section class="slab sand">
+    <div class="wrap">
+      <h2 class="big">What the kids get</h2>
+      <div class="copy">
+        <p>Below is a real menu from a two-night camp at Woodhouse. Not a sample we wrote for a website. This is the food we cook week in, week out.</p>
       </div>
-      <div class="events-chips">
-        <div class="chip">
-          <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-          School Groups
-        </div>
-        <div class="chip">
-          <svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
-          Adult Retreats
-        </div>
-        <div class="chip">
-          <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
-          Corporate Functions
-        </div>
-        <div class="chip">
-          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-          Camp Groups
-        </div>
-        <div class="chip">
-          <svg viewBox="0 0 24 24"><path d="M12 2v20"/><path d="M5 9h14"/><path d="M5 22h14"/><path d="M7 22V9a5 5 0 0 1 10 0v13"/></svg>
-          Church &amp; Youth Groups
-        </div>
-        <div class="chip">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 0 0 18"/><path d="M3.5 9h17M3.5 15h17"/></svg>
-          Sporting &amp; Club Camps
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
-<!-- ══ MENU ══ -->
-<div class="page" id="page-menu">
-  <div class="menu-hero">
-    <div class="container">
-      <div class="eyebrow center light">Our Menus</div>
-      <h1>Fresh &amp; <em>Thoughtful</em> Menus</h1>
-      <p>From school camps to adult retreats — freshly prepared, carefully crafted menus built around how camp groups actually eat.</p>
-    </div>
-  </div>
-  <div class="menu-cards">
-    <a class="menu-card" href="http://www.ashkelskitchen.com.au/School%20Camp%20Menu.pdf" target="_blank" rel="noopener">
-      <div class="menu-card-stripe"></div>
-      <div class="menu-card-body">
-        <div class="menu-cat">
-          <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-          Camps &amp; Retreats
+      <div class="card" style="margin-top:2.5rem;">
+        <div class="card-top">
+          <h3>Sample camp menu</h3>
+          <span>Two nights, three days</span>
         </div>
-        <div class="menu-title">School Camps Menu</div>
-        <p class="menu-desc">Freshly prepared meals designed for the tastes and hunger of school camp groups. Wholesome, satisfying food made with care for young appetites.</p>
-        <span class="menu-link">Download PDF
-          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </span>
-      </div>
-    </a>
-    <a class="menu-card alt" href="http://www.ashkelskitchen.com.au/Adult%20Retreat%20Menu.pdf" target="_blank" rel="noopener">
-      <div class="menu-card-stripe"></div>
-      <div class="menu-card-body">
-        <div class="menu-cat">
-          <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-          Camps &amp; Retreats
+        <div class="days">
+          <div class="day">
+            <h4>Day one</h4>
+            <dl>
+              <div><dt>Afternoon tea</dt><dd>Tiny Teddies, chips and fruit</dd></div>
+              <div><dt>Dinner</dt><dd>Aussie barbie. Gourmet sausages, steak and marinated chicken breast with garden fresh salad</dd></div>
+              <div><dt>Dessert</dt><dd>Apple crumble and custard</dd></div>
+            </dl>
+          </div>
+          <div class="day">
+            <h4>Day two</h4>
+            <dl>
+              <div><dt>Breakfast</dt><dd>Tea, coffee and juice. Toast and condiments, a selection of cereals, bacon and free-range scrambled eggs</dd></div>
+              <div><dt>Morning tea</dt><dd>Vanilla cupcakes with butter frosting</dd></div>
+              <div><dt>Lunch</dt><dd>Sausage sizzle in gourmet bread rolls</dd></div>
+              <div><dt>Afternoon tea</dt><dd>Muesli bars, Shapes and fruit</dd></div>
+              <div><dt>Dinner</dt><dd>Homemade lasagne with garden green salad and crusty bread</dd></div>
+              <div><dt>Dessert</dt><dd>Ice cream sundaes with M&amp;Ms</dd></div>
+            </dl>
+          </div>
+          <div class="day">
+            <h4>Day three</h4>
+            <dl>
+              <div><dt>Breakfast</dt><dd>Tea, coffee and juice. Toast and condiments, a selection of cereals, pancakes with maple syrup and whipped cream</dd></div>
+              <div><dt>Morning tea</dt><dd>Homemade chocolate chip biscuits and fruit</dd></div>
+              <div><dt>Lunch</dt><dd>Fresh gourmet bread rolls filled with a selection of cold meats, cheese and salads</dd></div>
+            </dl>
+          </div>
         </div>
-        <div class="menu-title">Adult Retreat Menu</div>
-        <p class="menu-desc">Fresh, satisfying meals designed for the tastes and hunger of adult camp and retreat groups. Comfort food with a thoughtful, elevated touch.</p>
-        <span class="menu-link">Download PDF
-          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </span>
+        <div class="card-foot">
+          <strong>Bowls of fresh fruit are out all day</strong> for the children to help themselves. Students bring their own morning tea and lunch on the day they arrive.
+        </div>
       </div>
-    </a>
-  </div>
-  <div class="menu-note">
-    <div class="menu-note-box">
-      Menus are subject to change. To enquire about fees for your camp, contact Kelly on — <a href="tel:0430165007">0430 165 007</a>. We're also happy to travel further afield for an additional fee.<br><br>
-      Can't find what you're looking for? We'd love to put a menu together for your group — <a href="#" onclick="goPage('contact');return false;">get in touch</a>.
+      <div class="btns">
+        <button class="btn btn-line" onclick="go('menus')">Both catering options</button>
+      </div>
     </div>
-  </div>
-</div>
+  </section>
 
-<!-- ══ ABOUT ══ -->
-<div class="page" id="page-about">
-  <div class="about-hero">
-    <div class="container">
-      <div class="eyebrow light">Our Story</div>
-      <h1>The Cook &amp; <em>The Chef.</em></h1>
-      <p>Ashley and Kelly Parr — a great husband and wife team who have combined all their passions into a camp catering business with real heart.</p>
-    </div>
-  </div>
-  <div class="container">
-    <div class="about-grid">
-      <div class="about-copy">
-        <div class="eyebrow">About Us</div>
-        <h2 class="section-h2" style="margin-bottom:1.5rem;">A partnership <em>built</em> on food.</h2>
-        <p>Ashley and Kelly Parr are the real life version of the Cook and the Chef. With a creative flair and a love of experimenting with new and delicious flavours, they look forward to sharing their talent with your next camp group.</p>
-        <p>Together they bring something unique — the precision and technique of a professionally trained chef, combined with the warmth and intuition of a natural cook. The result is food that's both impressive and genuinely satisfying.</p>
-        <p>These days we focus on what we do best: camp catering. School camps, adult retreats, church and youth groups, sporting clubs and corporate camps across the Adelaide Hills. We source local produce where possible — Hahndorf Fruit &amp; Veg, Crafers Bakehouse and Woodside Butcher.</p>
-        <p>If you don't find a menu that suits your group, please don't hesitate to ask us to put one together for you. And if your camp is a little further out, we're happy to travel for an additional fee.</p>
-        <blockquote class="pull">
-          <p>"Together we are able to combine the artistry of a commercially trained chef with the natural flair of a great home style cook. And we have lots of fun doing it."</p>
-        </blockquote>
-      </div>
-      <div class="team-stack">
-        <div class="team-card">
-          <img class="team-photo" src="ash.png" alt="Ashley Parr" onerror="this.outerHTML='<div class=team-photo-fb>&#128104;&#8205;&#127859;</div>'">
-          <div class="team-info">
-            <div class="team-name">Ashley Parr</div>
-            <div class="team-role">
-              <svg viewBox="0 0 24 24"><path d="M6 13.87A4 4 0 0 1 7.41 6a5.11 5.11 0 0 1 1.05-1.54 5 5 0 0 1 7.08 0A5.11 5.11 0 0 1 16.59 6 4 4 0 0 1 18 13.87V21H6Z"/><line x1="6" y1="17" x2="18" y2="17"/></svg>
-              Chef
-            </div>
-            <p class="team-bio">Ashley began as an apprentice chef at age 15 and studied at Tafe SA. He has worked in many well-known kitchens — the Three Brothers Arms, The Magic Flute, and the Lenzerheide Restaurant — before becoming Head Chef of Dixon's Restaurant. He brings over a decade of industry experience to every event.</p>
+  <section class="slab">
+    <div class="wrap">
+      <div class="split wide">
+        <div>
+          <h2 class="big">Send us the dietary list</h2>
+          <div class="copy">
+            <p>The kitchen is a nut-free zone. Give us the list with your final numbers and it is sorted before the bus pulls in. More complex needs just want a bit more notice.</p>
+            <p>And every camp has a few kids who will not touch a salad. We know who they are by the second meal. Nobody goes back to their bunk hungry.</p>
           </div>
-        </div>
-        <div class="team-card">
-          <img class="team-photo" src="kel.png" alt="Kelly Parr" onerror="this.outerHTML='<div class=team-photo-fb>&#128105;&#8205;&#127859;</div>'">
-          <div class="team-info">
-            <div class="team-name">Kelly Parr</div>
-            <div class="team-role">
-              <svg viewBox="0 0 24 24"><path d="M12 2c0 0-3 2.5-3 5a3 3 0 0 0 6 0c0-2.5-3-5-3-5z"/><line x1="12" y1="10" x2="12" y2="13"/><rect x="3" y="13" width="18" height="8" rx="1.5"/></svg>
-              Cook
-            </div>
-            <p class="team-bio">Kelly has 10 years of hospitality experience, including 5 years as assistant restaurant manager of the Goodwood Park Hotel. Auditioned and shortlisted for Masterchef in 2009, she has a strong knowledge of food flavours and an extensive repertoire of dishes — from small retreat groups right up to large-scale camps.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ══ CATERING ══ -->
-<div class="page" id="page-catering">
-  <div class="catering-hero">
-    <div class="container">
-      <div class="eyebrow center light">What We Offer</div>
-      <h1>Catering for <em>Camps</em> &amp; Groups</h1>
-      <p>School camps, adult retreats and corporate camps across the Adelaide Hills — Ash &amp; Kel's Kitchen brings exceptional food to groups of every size.</p>
-    </div>
-  </div>
-  <div class="container section">
-    <div class="section-head center">
-      <div class="eyebrow center">Group Types</div>
-      <h2 class="section-h2">What we <em>specialise in</em></h2>
-      <p class="section-sub center">Whatever the group, we'll keep everyone well fed — with food that reflects the care and craft of a team who truly loves what they do.</p>
-    </div>
-    <div class="event-types-grid">
-      <div class="event-type-card">
-        <div class="etc-icon">
-          <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-        </div>
-        <div class="etc-title">School Camps</div>
-        <p class="etc-body">Freshly prepared, hearty meals designed for active groups — including the kids who might be on the fussy side.</p>
-      </div>
-      <div class="event-type-card">
-        <div class="etc-icon">
-          <svg viewBox="0 0 24 24"><path d="M3 19l5-10 4 6 3-4 5 8"/><line x1="2" y1="19" x2="22" y2="19"/><circle cx="18" cy="6" r="2.5"/></svg>
-        </div>
-        <div class="etc-title">Adult Retreats</div>
-        <p class="etc-body">Relaxed, satisfying dining for adult camps and retreats — right down to freshly brewed coffee and Tim Tams.</p>
-      </div>
-      <div class="event-type-card">
-        <div class="etc-icon">
-          <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
-        </div>
-        <div class="etc-title">Corporate Camps</div>
-        <p class="etc-body">Team days, off-sites and conferences at Adelaide Hills camp venues such as <a href="https://www.woodhouse.org.au/" target="_blank" rel="noopener" style="color:var(--red);font-weight:600;">Woodhouse Adventure Park</a>.</p>
-      </div>
-    </div>
-    <div class="menu-note-box" style="margin-top:2.5rem;">
-      Based in the Adelaide Hills and happy to travel further afield for an additional fee. <a href="#" onclick="goPage('contact');return false;">Enquire about fees</a> for your camp.
-    </div>
-  </div>
-  <div class="catering-how">
-    <div class="container">
-      <div class="section-head center">
-        <div class="eyebrow center">How It Works</div>
-        <h2 class="section-h2">How it <em>works</em></h2>
-      </div>
-      <div class="how-steps">
-        <div class="how-step">
-          <div class="step-num">01</div>
-          <div class="step-title">Get in Touch</div>
-          <p class="step-body">Fill out our enquiry form or call us directly. Tell us about your camp, your group and your dates.</p>
-        </div>
-        <div class="how-step">
-          <div class="step-num">02</div>
-          <div class="step-title">Choose a Menu</div>
-          <p class="step-body">Browse our existing menus or work with us to put something together for your group. We'll come back to you with fees.</p>
-        </div>
-        <div class="how-step">
-          <div class="step-num">03</div>
-          <div class="step-title">We Prepare</div>
-          <p class="step-body">We source the freshest local ingredients and prepare everything with care and attention to detail.</p>
-        </div>
-        <div class="how-step">
-          <div class="step-num">04</div>
-          <div class="step-title">You Enjoy</div>
-          <p class="step-body">Sit back, relax, and let your group enjoy exceptional food — we'll handle everything else.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="catering-cta">
-    <div class="container">
-      <div class="eyebrow center light">Ready?</div>
-      <h2>Let's plan your <em>next</em> camp.</h2>
-      <p>Get in touch and we'll put together something special — tailored to your group, your dates and your dietary needs.</p>
-      <button class="btn btn-red" onclick="goPage('contact')">Make an Enquiry
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </button>
-    </div>
-  </div>
-</div>
-
-<!-- ══ CONTACT ══ -->
-<div class="page" id="page-contact">
-  <div class="container">
-    <div class="contact-layout">
-      <div class="contact-left">
-        <div class="eyebrow">Let's Talk</div>
-        <h1>Get in <em>touch.</em></h1>
-        <p>Thanks for your interest in Ash &amp; Kel's Kitchen. Fill out the form and we'll get back to you as soon as possible with fees for your camp. If you can't find a menu that suits your group, just ask — we'd love to put something together for you. Happy to travel further afield for an additional fee.</p>
-        <div class="contact-list">
-          <div class="contact-item">
-            <div class="contact-dot">
-              <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.43 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.64a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            </div>
-            <div class="contact-text"><strong>Kel</strong><a href="tel:0430165007">0430 165 007</a></div>
-          </div>
-          <div class="contact-item">
-            <div class="contact-dot">
-              <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.43 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.64a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            </div>
-            <div class="contact-text"><strong>Ash</strong><a href="tel:0423463104">0423 463 104</a></div>
-          </div>
-          <div class="contact-item">
-            <div class="contact-dot">
-              <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            </div>
-            <div class="contact-text"><strong>Email</strong><a href="mailto:bookings@ashkelskitchen.com.au">bookings@ashkelskitchen.com.au</a></div>
-          </div>
-          <div class="contact-item">
-            <div class="contact-dot">
-              <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            </div>
-            <div class="contact-text"><strong>Location</strong><span>Adelaide Hills, South Australia</span></div>
-          </div>
-        </div>
-      </div>
-      <div>
-        <div class="contact-form-box">
-          <div id="form-fields">
-            <div class="form-head">
-              <div class="form-title">Camp &amp; Group Enquiry</div>
-              <div class="form-subtitle">Please fill out the details below and we'll be in touch promptly with fees.</div>
-            </div>
-            <div id="form-error" class="form-error">Something went wrong. Please try again or call us directly on 0430 165 007.</div>
-            <div class="form-row">
-              <div class="form-group"><label>First Name *</label><input type="text" id="f-first" placeholder="First name"></div>
-              <div class="form-group"><label>Last Name *</label><input type="text" id="f-last" placeholder="Last name"></div>
-            </div>
-            <div class="form-group"><label>Phone *</label><input type="tel" id="f-phone" placeholder="04XX XXX XXX"></div>
-            <div class="form-group"><label>Email Address *</label><input type="email" id="f-email" placeholder="you@example.com"></div>
-            <div class="form-row">
-              <div class="form-group"><label>Camp Start Date</label><input type="date" id="f-date-start"></div>
-              <div class="form-group"><label>Camp End Date</label><input type="date" id="f-date-end"></div>
-            </div>
-            <div class="form-group"><label>Number in Group</label><input type="number" id="f-guests" placeholder="e.g. 40" min="1"></div>
-            <div class="form-group"><label>Camp Venue / Location</label><input type="text" id="f-venue" placeholder="Camp site name or suburb"></div>
-            <div class="form-group">
-              <label>Menu of Interest</label>
-              <select id="f-menu">
-                <option value="">Select a menu...</option>
-                <option>School Camps Menu</option>
-                <option>Adult Retreat Menu</option>
-                <option>Custom / Not Sure Yet</option>
-              </select>
-            </div>
-            <div class="form-group"><label>Message</label><textarea id="f-msg" placeholder="Tell us about your camp, any dietary requirements, or special requests..."></textarea></div>
-            <button class="btn-submit" id="submit-btn" onclick="submitForm()">
-              <svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-              Send Enquiry
+          <div class="btns">
+            <button class="btn btn-red" onclick="go('contact')">Book your camp
+              <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </button>
           </div>
-          <div class="form-success" id="form-success">
-            <div class="success-check">
-              <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-            </div>
-            <h3>Enquiry Sent!</h3>
-            <p>Thank you for reaching out. We'll review your details and be in touch shortly.<br><br>For urgent matters, call Kel on <a href="tel:0430165007">0430 165 007</a>.</p>
+        </div>
+        <ul class="checks">
+          <li><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Nut-free kitchen</li>
+          <li><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Gluten free and dairy free</li>
+          <li><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Vegetarian and vegan</li>
+          <li><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Most allergies, with notice</li>
+          <li><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>The fussy ones</li>
+          <li><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Staff coffee and a generous biscuit tin</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="slab sm sand">
+    <div class="wrap">
+      <h2 class="big">Where the food comes from</h2>
+      <div class="copy"><p>Fresh ingredients, and local Adelaide Hills produce wherever we can get it.</p></div>
+      <div class="sups">
+        <div class="sup"><b>Hahndorf Fruit &amp; Veg</b><span>Fruit and vegetables</span></div>
+        <div class="sup"><b>Crafers Bakehouse</b><span>Bread and rolls</span></div>
+        <div class="sup"><b>Woodside Butcher</b><span>Meat and smallgoods</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slab dark">
+    <div class="wrap">
+      <div class="split">
+        <div>
+          <span class="tag">Find us at</span>
+          <h2 class="big">Woodhouse Adventure Park</h2>
+          <div class="copy">
+            <p>We are the resident catering team at Woodhouse. It is 54 hectares at Piccadilly, about 25 minutes from the city, and school groups have been coming back to us for years. Corporate, charity and community groups eat just as well.</p>
+            <p>Catering can be arranged through the Woodhouse office on (08) 8339 3333, or come straight to us.</p>
+          </div>
+          <div class="btns">
+            <a class="btn btn-pale" href="https://www.woodhouse.org.au/" target="_blank" rel="noopener">Visit woodhouse.org.au
+              <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <table class="tbl">
+            <thead><tr><th>Where the group sleeps</th><th class="r">Beds</th></tr></thead>
+            <tbody>
+              <tr><td>Old Woodhouse Manor</td><td class="r">60</td></tr>
+              <tr><td>Rymill Centre</td><td class="r">80</td></tr>
+              <tr><td>Hooper Bunkhouse</td><td class="r">50</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="callband">
+    <div class="wrap">
+      <h2>Got camp dates in the diary?</h2>
+      <p>Call Kel. Tell her your numbers, your dates and your dietary list, and she will come back to you with a menu and the fees.</p>
+      <a class="num" href="tel:0430165007">0430 165 007</a>
+      <p class="or">Or <button onclick="go('contact')">send the details through the form</button>.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ CAMP MENUS ═══ -->
+<div class="page" id="p-menus">
+  <div class="phead">
+    <div class="wrap">
+      <h1>Camp menus</h1>
+      <p>Two ways to feed a camp. We cook the lot, or we send in the provisions and your group takes it from there. Either way the shopping, the planning and the dietary list are ours to worry about.</p>
+    </div>
+  </div>
+
+  <section class="slab">
+    <div class="wrap">
+      <span class="tag">Option one</span>
+      <h2 class="big">We cook, you eat</h2>
+      <div class="copy">
+        <p>Everything is cooked on site in the camp kitchen. No depot food, no reheated trays off a truck. You give us your arrival and departure times and we build the meal times around your program.</p>
+      </div>
+      <div class="prov" style="margin-top:2.5rem;">
+        <div class="prov-a">
+          <h3 class="mid">Every day covers</h3>
+          <ul class="deflist">
+            <li><b>Breakfast</b> — cereals, toast, a hot option, tea and coffee</li>
+            <li><b>Morning tea</b> — something out of the oven, and fruit</li>
+            <li><b>Lunch</b> — hot or cold, packed to take out if the day runs long</li>
+            <li><b>Afternoon tea</b> — enough to get them through to dinner</li>
+            <li><b>Dinner and dessert</b> — a proper hot meal, always with pudding</li>
+            <li><b>Fruit, all day</b> — bowls out for the kids to help themselves</li>
+          </ul>
+          <div class="btns">
+            <a class="btn btn-red" href="http://www.ashkelskitchen.com.au/School%20Camp%20Menu.pdf" target="_blank" rel="noopener">Download the menu
+              <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>
+            </a>
+            <button class="btn btn-line" onclick="go('home')">See the sample menu</button>
+          </div>
+        </div>
+        <div class="prov-b">
+          <h3 class="mid">Good to know</h3>
+          <ul class="deflist">
+            <li>The kitchen is a <b>nut-free zone</b>.</li>
+            <li>Most allergies and dietary requirements are catered for. Complex needs want a bit more notice.</li>
+            <li>Meal times move with your program, not the other way round.</li>
+            <li>Menus change with the seasons and with your group.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slab sand">
+    <div class="wrap">
+      <span class="tag">Option two</span>
+      <h2 class="big">We provision, you cook</h2>
+      <div class="copy">
+        <p>For smaller groups with their own hands and a working barbecue. We do the shopping and the prep. Eggs cracked and whisked, pancake mix made, lasagne assembled, crumble ready for the oven. Any delicious leftovers, pack up and take with you. Too easy.</p>
+      </div>
+      <div class="prov" style="margin-top:2.5rem;">
+        <div class="prov-a">
+          <h3 class="mid">What arrives</h3>
+          <ul class="deflist">
+            <li><b>Breakfast</b> — bread, cereals, butter, spreads, juice, milk, tea, coffee and Milo. Bacon and scrambled eggs. Pancakes with fresh whipped cream</li>
+            <li><b>Snacks</b> — biscuits, fruit, cheeses, crackers, dip, chips, muesli bars and tubs of yoghurt</li>
+            <li><b>Lunch</b> — hamburgers with all the trimmings. Ham and salad wraps</li>
+            <li><b>Dinner</b> — house-made lasagne with salad and ice cream sundaes. A barbecue pack with bread, salad, house-made apple crumble and custard</li>
+            <li><b>The bits</b> — cutlery and crockery, sauces, salt and pepper, serviettes, cling wrap, foil and oil</li>
+          </ul>
+        </div>
+        <div class="prov-b">
+          <h3 class="mid">Your part</h3>
+          <ol class="steps">
+            <li>Cook the barbecue meat</li>
+            <li>Put the salads together</li>
+            <li>Fry the bacon and eggs</li>
+            <li>Fry the pancake mix</li>
+            <li>Put the wraps together</li>
+            <li>Cook the hamburger patties</li>
+            <li>Heat the lasagne</li>
+            <li>Heat the apple crumble</li>
+            <li>Enjoy</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slab">
+    <div class="wrap">
+      <div class="split">
+        <div>
+          <h2 class="big">What it costs</h2>
+          <div class="copy">
+            <p>Numbers, nights, dietary needs and where you are camping all change the price, so we do not publish one. Send your details through and we will come back with a menu and the fees.</p>
+            <p>Camping somewhere other than Woodhouse? We will travel to you for an additional fee.</p>
+          </div>
+          <div class="btns">
+            <button class="btn btn-red" onclick="go('contact')">Ask about fees
+              <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+            <a class="btn btn-line" href="tel:0430165007">Call Kel</a>
           </div>
         </div>
       </div>
     </div>
+  </section>
+</div>
+
+<!-- ═══ ABOUT ═══ -->
+<div class="page" id="p-about">
+  <div class="phead">
+    <div class="wrap">
+      <h1>The cook and the chef</h1>
+      <p>Ashley and Kelly Parr. A husband and wife team who between them can run a commercial kitchen and cook like it is home.</p>
+    </div>
+  </div>
+
+  <section class="slab">
+    <div class="wrap">
+      <div class="split">
+        <div>
+          <h2 class="big">A partnership built on food</h2>
+          <div class="copy">
+            <p>Ash and Kel lead the resident catering team at Woodhouse Adventure Park, feeding school camps, corporate groups, charities and community groups across the Adelaide Hills.</p>
+            <p>Between them they bring the artistry of a commercially trained chef and the natural flair of a great home style cook. In camp catering that combination matters more than it sounds. You need someone who can plate up properly, and someone who knows what a hundred tired eleven-year-olds will actually eat.</p>
+            <p>They use the freshest ingredients they can get their hands on and source local Adelaide Hills produce wherever possible. Guests keep coming back, which in this business is the only review that counts.</p>
+          </div>
+          <div class="quote">
+            <p>“Together we are able to combine the artistry of a commercially trained chef with the natural flair of a great home style cook. And we have lots of fun doing it.”</p>
+            <cite>Ash and Kel</cite>
+          </div>
+        </div>
+        <div class="team">
+          <div class="person">
+            <img src="ash.png" alt="Ashley Parr" onerror="this.outerHTML='<div class=fb>&#128104;&#8205;&#127859;</div>'">
+            <div>
+              <h3>Ashley Parr</h3>
+              <span class="role">Chef</span>
+              <p>Ashley started as an apprentice chef at 15 and trained at TAFE SA. He worked at the Three Brothers Arms, The Magic Flute and the Lenzerheide Restaurant before becoming Head Chef of Dixon's Restaurant. He also makes the stove-top espresso the teachers write home about.</p>
+            </div>
+          </div>
+          <div class="person">
+            <img src="kel.png" alt="Kelly Parr" onerror="this.outerHTML='<div class=fb>&#128105;&#8205;&#127859;</div>'">
+            <div>
+              <h3>Kelly Parr</h3>
+              <span class="role">Cook</span>
+              <p>Kelly has ten years in hospitality, including five as assistant restaurant manager at the Goodwood Park Hotel. She auditioned and was shortlisted for MasterChef in 2009, and has a deep repertoire of dishes, scaled from a small retreat group up to a full camp.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="callband">
+    <div class="wrap">
+      <h2>Come and eat with us</h2>
+      <p>Bring a camp to Woodhouse, or bring us to your camp. Either way we would love to hear about it.</p>
+      <a class="num" href="tel:0430165007">0430 165 007</a>
+    </div>
   </div>
 </div>
 
-<!-- ══ ORDER ONLINE ══ -->
-<div class="page" id="page-order">
-  <div class="order-hero">
-    <div class="container">
-      <div class="eyebrow center">Order Online</div>
-      <h1>Order <em>Online</em></h1>
-      <p>We're working on making it even easier to book your camp catering directly online. In the meantime, here's how you can reach us.</p>
+<!-- ═══ CONTACT ═══ -->
+<div class="page" id="p-contact">
+  <div class="phead">
+    <div class="wrap">
+      <h1>Book your camp</h1>
+      <p>Send through your dates, your numbers and your dietary list and we will come back with a menu and the fees. If you would rather talk it through, call Kel. She answers.</p>
     </div>
   </div>
-  <div class="container">
-    <div class="order-options">
-      <div class="order-card">
-        <div class="order-card-icon">
-          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+
+  <section class="slab">
+    <div class="wrap">
+      <div class="cgrid">
+        <div>
+          <h2 class="big">Get in touch</h2>
+          <div class="copy">
+            <p>Camping at Woodhouse? Catering can also be arranged through the Woodhouse office on <a href="tel:0883393333" style="color:var(--red);font-weight:600;">(08) 8339 3333</a>.</p>
+          </div>
+          <div class="cnums">
+            <div class="cnum"><b>Kel</b><a href="tel:0430165007">0430 165 007</a></div>
+            <div class="cnum"><b>Ash</b><a href="tel:0423463104">0423 463 104</a></div>
+            <div class="cnum"><b>Email</b><a href="mailto:bookings@ashkelskitchen.com.au">bookings@ashkelskitchen.com.au</a></div>
+            <div class="cnum"><b>Find us</b><span>Woodhouse, Piccadilly SA</span></div>
+          </div>
         </div>
-        <div class="badge">Recommended</div>
-        <h3>Submit an Enquiry Form</h3>
-        <p>Fill out our online enquiry form with your camp details, group numbers, and menu preferences. We'll get back to you with fees for your camp.</p>
-        <button class="btn btn-red" onclick="goPage('contact')">Fill Out Form</button>
-      </div>
-      <div class="order-card">
-        <div class="order-card-icon">
-          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.43 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.64a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <div class="form">
+          <div id="fields">
+            <h3>Camp enquiry</h3>
+            <div class="sub">The more you tell us, the more useful our reply.</div>
+            <div id="err" class="err">That did not send. Try again, or call Kel on 0430 165 007.</div>
+            <div class="frow">
+              <div class="fg"><label for="f-first">First name *</label><input type="text" id="f-first" placeholder="First name"></div>
+              <div class="fg"><label for="f-last">Last name *</label><input type="text" id="f-last" placeholder="Last name"></div>
+            </div>
+            <div class="fg"><label for="f-org">School or group</label><input type="text" id="f-org" placeholder="e.g. Stirling East Primary"></div>
+            <div class="frow">
+              <div class="fg"><label for="f-phone">Phone *</label><input type="tel" id="f-phone" placeholder="04XX XXX XXX"></div>
+              <div class="fg"><label for="f-email">Email *</label><input type="email" id="f-email" placeholder="you@example.com"></div>
+            </div>
+            <div class="frow">
+              <div class="fg"><label for="f-date-start">Camp starts</label><input type="date" id="f-date-start"></div>
+              <div class="fg"><label for="f-date-end">Camp ends</label><input type="date" id="f-date-end"></div>
+            </div>
+            <div class="frow">
+              <div class="fg"><label for="f-guests">Students</label><input type="number" id="f-guests" placeholder="e.g. 60" min="1"></div>
+              <div class="fg"><label for="f-staff">Adults and staff</label><input type="number" id="f-staff" placeholder="e.g. 8" min="0"></div>
+            </div>
+            <div class="fg"><label for="f-venue">Where is the camp?</label><input type="text" id="f-venue" placeholder="Woodhouse, or another site"></div>
+            <div class="fg"><label for="f-msg">Dietary requirements and anything else</label><textarea id="f-msg" placeholder="Allergies, gluten free, vegetarian, the fussy ones, and anything else we should know."></textarea></div>
+            <button class="send" id="send" onclick="submitForm()">Send enquiry</button>
+          </div>
+          <div class="done" id="done">
+            <h3>Enquiry sent</h3>
+            <p>Thanks. We will be in touch shortly.<br>For anything urgent, call Kel on <a href="tel:0430165007">0430 165 007</a>.</p>
+          </div>
         </div>
-        <div class="badge" style="background:rgba(107,102,94,.08);color:var(--stone);">Direct</div>
-        <h3>Call Us Directly</h3>
-        <p>Prefer to talk it through? Call Kelly or Ashley directly and we'll help you put together the right menu for your camp.</p>
-        <a href="tel:0430165007" class="btn btn-outline" style="display:inline-flex;">Call 0430 165 007</a>
-      </div>
-      <div class="order-card">
-        <div class="order-card-icon">
-          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        </div>
-        <div class="badge" style="background:rgba(107,102,94,.08);color:var(--stone);">Email</div>
-        <h3>Send Us an Email</h3>
-        <p>Email your camp details to us and we'll come back to you with fees. We endeavour to respond within one business day.</p>
-        <a href="mailto:bookings@ashkelskitchen.com.au" class="btn btn-outline" style="display:inline-flex;">Email Us</a>
       </div>
     </div>
-  </div>
+  </section>
 </div>
 
-<!-- ══ FOOTER ══ -->
+<!-- ═══ FOOTER ═══ -->
 <footer>
-  <div class="footer-main">
-    <div class="footer-logo">
-      <img src="logo.png" alt="Ash &amp; Kel's Kitchen" onerror="this.style.display='none'">
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <img src="logo.png" alt="Ash &amp; Kel's Kitchen" onerror="this.style.display='none'">
+        <p style="font-size:.94rem;max-width:34ch;">School camp catering across the Adelaide Hills. Resident catering team at Woodhouse Adventure Park.</p>
+      </div>
+      <div>
+        <h4>Get in touch</h4>
+        <ul class="flist">
+          <li><a href="tel:0430165007">Kel — 0430 165 007</a></li>
+          <li><a href="tel:0423463104">Ash — 0423 463 104</a></li>
+          <li><a href="mailto:bookings@ashkelskitchen.com.au">bookings@ashkelskitchen.com.au</a></li>
+          <li><a href="tel:0883393333">Woodhouse office — (08) 8339 3333</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Pages</h4>
+        <ul class="flist">
+          <li><a href="#" onclick="go('home');return false;">Home</a></li>
+          <li><a href="#" onclick="go('menus');return false;">Camp menus</a></li>
+          <li><a href="#" onclick="go('about');return false;">About us</a></li>
+          <li><a href="#" onclick="go('contact');return false;">Contact</a></li>
+          <li><a href="https://www.woodhouse.org.au/" target="_blank" rel="noopener">Woodhouse Adventure Park</a></li>
+        </ul>
+      </div>
     </div>
-    <nav class="footer-nav">
-      <button onclick="goPage('home')">Home</button>
-      <button onclick="goPage('menu')">Menu</button>
-      <button onclick="goPage('about')">About Us</button>
-      <button onclick="goPage('catering')">Camp Catering</button>
-      <button onclick="goPage('contact')">Contact</button>
-      <button onclick="goPage('order')">Order Online</button>
-    </nav>
-    <div class="footer-copy">&copy; Ash &amp; Kel's Kitchen<br>Adelaide Hills, SA</div>
-  </div>
-  <div class="footer-strip container">
-    <a href="tel:0430165007">Kel: 0430 165 007</a>
-    <span style="color:rgba(255,255,255,.12);">|</span>
-    <a href="tel:0423463104">Ash: 0423 463 104</a>
-    <span style="color:rgba(255,255,255,.12);">|</span>
-    <a href="mailto:bookings@ashkelskitchen.com.au">bookings@ashkelskitchen.com.au</a>
-    <span style="color:rgba(255,255,255,.12);">|</span>
-    <a href="https://www.woodhouse.org.au/" target="_blank" rel="noopener">Woodhouse Adventure Park</a>
+    <div class="fbase">
+      <span>&copy; Ash &amp; Kel's Kitchen</span>
+      <span>Woodhouse Adventure Park, Piccadilly, South Australia</span>
+    </div>
   </div>
 </footer>
 
 <script>
-/* ── Navigation ── */
-function goPage(id) {
-  document.querySelectorAll(".page").forEach(p => p.classList.remove("is-active"));
-  document.querySelectorAll(".nav-btn, .mobile-nav-item").forEach(b => b.classList.remove("is-active"));
-  var page = document.getElementById("page-" + id);
-  if (page) page.classList.add("is-active");
-  document.querySelectorAll("[data-page='" + id + "']").forEach(b => b.classList.add("is-active"));
-  window.scrollTo({ top: 0, behavior: "smooth" });
-  closeMobileNav();
+/* ── Page switching ── */
+function go(id){
+  document.querySelectorAll(".page").forEach(function(p){ p.classList.remove("on"); });
+  document.querySelectorAll(".nav button, .mnav button").forEach(function(b){ b.classList.remove("on"); });
+  var page = document.getElementById("p-" + id);
+  if (page) page.classList.add("on");
+  document.querySelectorAll("[data-p='" + id + "']").forEach(function(b){ b.classList.add("on"); });
+  window.scrollTo({ top: 0, behavior: "auto" });
+  closeNav();
 }
-
-document.querySelectorAll("[data-page]").forEach(function(btn) {
-  btn.addEventListener("click", function() { goPage(btn.dataset.page); });
+document.querySelectorAll("[data-p]").forEach(function(btn){
+  btn.addEventListener("click", function(){ go(btn.dataset.p); });
 });
 
 /* ── Mobile nav ── */
-var mobileNav = document.getElementById("mobile-nav");
-var mobileOverlay = document.getElementById("mobile-overlay");
-var hamburgerBtn = document.getElementById("hamburger-btn");
-var hamIcon = document.getElementById("ham-icon");
-var isOpen = false;
+var mnav = document.getElementById("mnav");
+var burger = document.getElementById("burger");
+var bicon = document.getElementById("bicon");
+var navOpen = false;
+var iconBars = '<line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="13" x2="21" y2="13"/><line x1="3" y1="19" x2="21" y2="19"/>';
+var iconX = '<line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>';
 
-var openIcon = '<line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>';
-var closeIcon = '<line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>';
-
-function openMobileNav() {
-  isOpen = true;
-  mobileNav.classList.add("is-open");
-  mobileOverlay.classList.add("is-open");
-  hamIcon.innerHTML = closeIcon;
+function openNav(){
+  navOpen = true;
+  mnav.classList.add("on");
+  bicon.innerHTML = iconX;
+  burger.setAttribute("aria-expanded", "true");
   document.body.style.overflow = "hidden";
 }
-function closeMobileNav() {
-  isOpen = false;
-  mobileNav.classList.remove("is-open");
-  mobileOverlay.classList.remove("is-open");
-  hamIcon.innerHTML = openIcon;
+function closeNav(){
+  navOpen = false;
+  mnav.classList.remove("on");
+  bicon.innerHTML = iconBars;
+  burger.setAttribute("aria-expanded", "false");
   document.body.style.overflow = "";
 }
-hamburgerBtn.addEventListener("click", function() {
-  isOpen ? closeMobileNav() : openMobileNav();
-});
-mobileOverlay.addEventListener("click", closeMobileNav);
+burger.addEventListener("click", function(){ navOpen ? closeNav() : openNav(); });
 
-/* ── Date validation ── */
-document.getElementById("f-date-start").addEventListener("change", function() {
-  var endInput = document.getElementById("f-date-end");
-  endInput.min = this.value;
-  if (endInput.value && endInput.value < this.value) endInput.value = this.value;
+/* ── Dates ── */
+document.getElementById("f-date-start").addEventListener("change", function(){
+  var end = document.getElementById("f-date-end");
+  end.min = this.value;
+  if (end.value && end.value < this.value) end.value = this.value;
 });
 
-/* ── Form submission ── */
-async function submitForm() {
-  var first  = document.getElementById("f-first").value.trim();
-  var last   = document.getElementById("f-last").value.trim();
-  var phone  = document.getElementById("f-phone").value.trim();
-  var email  = document.getElementById("f-email").value.trim();
-  var dateStart = document.getElementById("f-date-start").value;
-  var dateEnd   = document.getElementById("f-date-end").value;
+/* ── Enquiry form ── */
+async function submitForm(){
+  var v = function(id){ return document.getElementById(id).value.trim(); };
+  var first = v("f-first"), last = v("f-last"), org = v("f-org");
+  var phone = v("f-phone"), email = v("f-email");
+  var dStart = document.getElementById("f-date-start").value;
+  var dEnd = document.getElementById("f-date-end").value;
   var guests = document.getElementById("f-guests").value;
-  var venue  = document.getElementById("f-venue").value.trim();
-  var menu   = document.getElementById("f-menu").value;
-  var msg    = document.getElementById("f-msg").value.trim();
-  var errEl  = document.getElementById("form-error");
-  var btn    = document.getElementById("submit-btn");
+  var staff = document.getElementById("f-staff").value;
+  var venue = v("f-venue"), msg = v("f-msg");
+  var err = document.getElementById("err");
+  var btn = document.getElementById("send");
 
-  errEl.style.display = "none";
+  err.style.display = "none";
 
   if (!first || !phone || !email) {
-    alert("Please fill in your name, phone and email to continue.");
+    err.textContent = "Please add your name, phone and email so we can reply.";
+    err.style.display = "block";
     return;
   }
 
-  var dateRange = dateStart
-    ? (dateEnd && dateEnd !== dateStart ? dateStart + " to " + dateEnd : dateStart)
-    : "Not specified";
+  var dates = dStart ? (dEnd && dEnd !== dStart ? dStart + " to " + dEnd : dStart) : "Not specified";
 
   btn.disabled = true;
   btn.textContent = "Sending...";
 
   try {
-    var response = await fetch("https://formspree.io/f/xlgoapee", {
+    var res = await fetch("https://formspree.io/f/xlgoapee", {
       method: "POST",
       headers: { "Content-Type": "application/json", "Accept": "application/json" },
       body: JSON.stringify({
         "_replyto": email,
-        "_subject": "New Camp Catering Enquiry from " + first + " " + last,
+        "_subject": "New camp enquiry from " + first + " " + last,
         "First Name": first,
         "Last Name": last,
+        "School / Group": org || "Not specified",
         "Phone": phone,
         "Email": email,
-        "Camp Dates": dateRange,
-        "Number in Group": guests || "Not specified",
-        "Camp Venue / Location": venue || "Not specified",
-        "Menu of Interest": menu || "Not specified",
-        "Message": msg || "No message provided"
+        "Camp Dates": dates,
+        "Students": guests || "Not specified",
+        "Adults / Staff": staff || "Not specified",
+        "Camp Location": venue || "Not specified",
+        "Dietary / Notes": msg || "No message provided"
       })
     });
-
-    if (response.ok) {
-      document.getElementById("form-fields").style.display = "none";
-      document.getElementById("form-success").style.display = "block";
-    } else {
-      throw new Error("failed");
-    }
-  } catch(e) {
+    if (!res.ok) throw new Error("failed");
+    document.getElementById("fields").style.display = "none";
+    document.getElementById("done").style.display = "block";
+  } catch (e) {
     btn.disabled = false;
-    btn.innerHTML = '<svg viewBox="0 0 24 24" width="15" height="15" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Send Enquiry';
-    errEl.style.display = "block";
+    btn.textContent = "Send enquiry";
+    err.textContent = "That did not send. Try again, or call Kel on 0430 165 007.";
+    err.style.display = "block";
   }
 }
 </script>
