@@ -90,7 +90,7 @@ h3.mid{font-size:1.25rem;font-weight:700;letter-spacing:-.01em;}
 /* ── HERO ── */
 .hero{position:relative;background:var(--forest);}
 .hero-img{height:min(62vw,600px);background:url("group_photo.png") center 28%/cover no-repeat;}
-.hero-panel{position:relative;max-width:1220px;margin:-9rem auto 0;padding:0 1.75rem;}
+.hero-panel{position:relative;max-width:1220px;margin:-12.5rem auto 0;padding:0 1.75rem;}
 .hero-box{background:var(--red);color:#fff;max-width:730px;padding:3rem 3rem 2.6rem;}
 .hero-eye{font-family:"Archivo",sans-serif;font-size:.8rem;font-weight:700;color:rgba(255,255,255,.85);margin-bottom:1.1rem;}
 .hero-box h1{color:#fff;font-size:clamp(2.1rem,4.6vw,3.7rem);font-weight:800;letter-spacing:-.025em;text-transform:uppercase;}
@@ -108,20 +108,18 @@ h3.mid{font-size:1.25rem;font-weight:700;letter-spacing:-.01em;}
 .factline span{display:flex;align-items:center;gap:.55rem;}
 .factline b{color:var(--red);font-size:1.1rem;line-height:1;}
 
-/* ── MENU CARD ── */
-.card{background:var(--paper);border:2px solid var(--ink);}
-.card-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:.5rem 1.5rem;background:var(--ink);color:#fff;padding:1.15rem 1.75rem;}
-.card-top h3{color:#fff;font-size:1.15rem;font-weight:700;}
-.card-top span{font-family:"Archivo",sans-serif;font-size:.82rem;font-weight:600;color:rgba(255,255,255,.65);}
-.days{display:grid;grid-template-columns:repeat(3,1fr);}
-.day{padding:1.9rem 1.75rem;border-right:1px solid var(--line);}
-.day:last-child{border-right:none;}
-.day h4{font-size:1.45rem;font-weight:800;color:var(--red);letter-spacing:-.01em;margin-bottom:1.25rem;}
-.day dl{display:flex;flex-direction:column;gap:1rem;}
-.day dt{font-family:"Archivo",sans-serif;font-size:.76rem;font-weight:700;color:var(--mute);text-transform:uppercase;letter-spacing:.04em;}
-.day dd{font-size:.96rem;color:var(--ink);margin-top:.15rem;}
-.card-foot{border-top:1px solid var(--line);background:var(--sand);padding:1.1rem 1.75rem;font-size:.92rem;}
-.card-foot strong{color:var(--ink);font-weight:600;}
+/* ── SAMPLE MENU ── */
+.menu{margin-top:2.75rem;}
+.menu-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:.35rem 1.5rem;padding-bottom:.85rem;border-bottom:3px solid var(--ink);}
+.menu-head h3{font-size:1.1rem;font-weight:700;text-transform:uppercase;letter-spacing:.02em;}
+.menu-head span{font-family:"Archivo",sans-serif;font-size:.85rem;font-weight:600;color:var(--mute);}
+.days{display:grid;grid-template-columns:repeat(3,1fr);gap:0 3.25rem;margin-top:2.25rem;}
+.day h4{font-family:"Archivo",sans-serif;font-size:1.55rem;font-weight:800;color:var(--red);letter-spacing:-.015em;padding-bottom:.7rem;margin-bottom:1.5rem;border-bottom:1px solid var(--line);}
+.day dl{display:flex;flex-direction:column;gap:1.3rem;}
+.day dt{font-family:"Archivo",sans-serif;font-size:.72rem;font-weight:700;color:var(--mute);text-transform:uppercase;letter-spacing:.09em;}
+.day dd{font-size:1.02rem;line-height:1.5;color:var(--ink);margin-top:.3rem;}
+.menu-note{margin-top:2.5rem;padding-top:1.2rem;border-top:1px solid var(--line);font-size:.95rem;max-width:78ch;}
+.menu-note strong{color:var(--ink);font-weight:600;}
 
 /* ── SPLIT ── */
 .split{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start;}
@@ -143,16 +141,24 @@ h3.mid{font-size:1.25rem;font-weight:700;letter-spacing:-.01em;}
 .tbl{width:100%;border-collapse:collapse;font-size:.96rem;}
 .tbl th{text-align:left;font-family:"Archivo",sans-serif;font-size:.76rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:rgba(255,255,255,.5);padding-bottom:.6rem;border-bottom:1px solid var(--line-dk);}
 .tbl td{padding:.85rem 0;border-bottom:1px solid var(--line-dk);color:#fff;}
-.tbl td.r{text-align:right;color:rgba(255,255,255,.6);white-space:nowrap;}
+.tbl th.c{text-align:center;}
+.tbl td.c{text-align:center;color:#fff;font-family:"Archivo",sans-serif;font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap;}
+
+/* ── END BAR ── */
+.endbar{background:var(--sand);border-top:1px solid var(--line);padding:3rem 0;}
+.endbar .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.25rem;}
+.endbar h2{font-size:clamp(1.4rem,2.4vw,1.9rem);font-weight:800;letter-spacing:-.02em;}
 
 /* ── CALL BAND ── */
 .callband{background:var(--red);color:#fff;padding:3.5rem 0;}
 .callband h2{color:#fff;font-size:clamp(1.7rem,3.2vw,2.5rem);font-weight:800;letter-spacing:-.02em;}
 .callband p{margin-top:.9rem;font-size:1.05rem;color:rgba(255,255,255,.92);max-width:56ch;}
-.callband .num{display:inline-block;margin-top:1.6rem;font-family:"Archivo",sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;color:#fff;letter-spacing:-.02em;border-bottom:4px solid rgba(255,255,255,.5);}
-.callband .num:hover{border-bottom-color:#fff;}
-.callband .or{margin-top:1.2rem;font-size:.95rem;color:rgba(255,255,255,.85);}
-.callband .or button{font-weight:600;color:#fff;border-bottom:2px solid rgba(255,255,255,.6);}
+.routes{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-top:2rem;max-width:820px;}
+.route{background:rgba(0,0,0,.14);padding:1.4rem 1.5rem;}
+.route h3{font-family:"Archivo",sans-serif;font-size:.78rem;font-weight:700;color:rgba(255,255,255,.75);text-transform:uppercase;letter-spacing:.07em;}
+.route a,.route button{display:inline-block;margin-top:.5rem;font-family:"Archivo",sans-serif;font-size:1.35rem;font-weight:800;color:#fff;letter-spacing:-.015em;border-bottom:3px solid rgba(255,255,255,.45);}
+.route a:hover,.route button:hover{border-bottom-color:#fff;}
+.route p{margin-top:.6rem;font-size:.9rem;color:rgba(255,255,255,.8);}
 
 /* ── PAGE HEADER ── */
 .phead{background:var(--forest);padding:4rem 0;}
@@ -220,9 +226,8 @@ footer a:hover{color:#fff;}
 
 /* ── RESPONSIVE ── */
 @media(max-width:960px){
-  .days{grid-template-columns:1fr;}
-  .day{border-right:none;border-bottom:1px solid var(--line);}
-  .day:last-child{border-bottom:none;}
+  .days{grid-template-columns:1fr;gap:2.5rem 0;}
+  .routes{grid-template-columns:1fr;}
   .split,.split.wide,.prov,.cgrid,.fgrid{grid-template-columns:1fr;gap:2.25rem;}
   .prov-a{border-right:none;border-bottom:2px solid var(--ink);}
   .sups{grid-template-columns:1fr;}
@@ -301,7 +306,7 @@ footer a:hover{color:#fff;}
           <button class="btn btn-white" onclick="go('menus')">See the camp menu
             <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </button>
-          <button class="btn btn-clear" onclick="go('contact')">Book your camp</button>
+          <button class="btn btn-clear" onclick="go('contact')">Catering enquiry</button>
         </div>
       </div>
     </div>
@@ -323,8 +328,8 @@ footer a:hover{color:#fff;}
         <p>Below is a real menu from a two-night camp at Woodhouse. Not a sample we wrote for a website. This is the food we cook week in, week out.</p>
       </div>
 
-      <div class="card" style="margin-top:2.5rem;">
-        <div class="card-top">
+      <div class="menu">
+        <div class="menu-head">
           <h3>Sample camp menu</h3>
           <span>Two nights, three days</span>
         </div>
@@ -357,9 +362,9 @@ footer a:hover{color:#fff;}
             </dl>
           </div>
         </div>
-        <div class="card-foot">
+        <p class="menu-note">
           <strong>Bowls of fresh fruit are out all day</strong> for the children to help themselves. Students bring their own morning tea and lunch on the day they arrive.
-        </div>
+        </p>
       </div>
       <div class="btns">
         <button class="btn btn-line" onclick="go('menus')">Both catering options</button>
@@ -377,7 +382,7 @@ footer a:hover{color:#fff;}
             <p>And every camp has a few kids who will not touch a salad. We know who they are by the second meal. Nobody goes back to their bunk hungry.</p>
           </div>
           <div class="btns">
-            <button class="btn btn-red" onclick="go('contact')">Book your camp
+            <button class="btn btn-red" onclick="go('contact')">Send an enquiry
               <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </button>
           </div>
@@ -424,11 +429,11 @@ footer a:hover{color:#fff;}
         </div>
         <div>
           <table class="tbl">
-            <thead><tr><th>Where the group sleeps</th><th class="r">Beds</th></tr></thead>
+            <thead><tr><th>Where the group sleeps</th><th class="c">Beds</th></tr></thead>
             <tbody>
-              <tr><td>Old Woodhouse Manor</td><td class="r">60</td></tr>
-              <tr><td>Rymill Centre</td><td class="r">80</td></tr>
-              <tr><td>Hooper Bunkhouse</td><td class="r">50</td></tr>
+              <tr><td>Old Woodhouse Manor</td><td class="c">60</td></tr>
+              <tr><td>Rymill Centre</td><td class="c">80</td></tr>
+              <tr><td>Hooper Bunkhouse</td><td class="c">50</td></tr>
             </tbody>
           </table>
         </div>
@@ -438,10 +443,20 @@ footer a:hover{color:#fff;}
 
   <div class="callband">
     <div class="wrap">
-      <h2>Got camp dates in the diary?</h2>
-      <p>Call Kel. Tell her your numbers, your dates and your dietary list, and she will come back to you with a menu and the fees.</p>
-      <a class="num" href="tel:0430165007">0430 165 007</a>
-      <p class="or">Or <button onclick="go('contact')">send the details through the form</button>.</p>
+      <h2>Talk to us about catering</h2>
+      <p>Camps at Woodhouse are booked through the Woodhouse office, and catering is arranged as part of that. For anything else, come straight to us.</p>
+      <div class="routes">
+        <div class="route">
+          <h3>Camps at Woodhouse</h3>
+          <a href="tel:0883393333">(08) 8339 3333</a>
+          <p>The Woodhouse office handles the booking, the accommodation and the catering together.</p>
+        </div>
+        <div class="route">
+          <h3>Any other catering</h3>
+          <button onclick="go('contact')">Send an enquiry</button>
+          <p>Tell us the date, the numbers and what you need. We will come back with a menu and the fees.</p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -596,11 +611,12 @@ footer a:hover{color:#fff;}
     </div>
   </section>
 
-  <div class="callband">
+  <div class="endbar">
     <div class="wrap">
       <h2>Come and eat with us</h2>
-      <p>Bring a camp to Woodhouse, or bring us to your camp. Either way we would love to hear about it.</p>
-      <a class="num" href="tel:0430165007">0430 165 007</a>
+      <button class="btn btn-red" onclick="go('contact')">Catering enquiry
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
     </div>
   </div>
 </div>
@@ -609,8 +625,9 @@ footer a:hover{color:#fff;}
 <div class="page" id="p-contact">
   <div class="phead">
     <div class="wrap">
-      <h1>Book your camp</h1>
-      <p>Send through your dates, your numbers and your dietary list and we will come back with a menu and the fees. If you would rather talk it through, call Kel. She answers.</p>
+      <h1>Get in touch</h1>
+      <p>Tell us the date, roughly how many people and what you have in mind, and we will come back with a menu and the fees. If you would rather talk it through, call Kel. She answers.</p>
+      <p style="margin-top:.85rem;font-size:.98rem;color:rgba(255,255,255,.68);">Booking a camp at Woodhouse? Those go through the Woodhouse office on <a href="tel:0883393333" style="color:#fff;font-weight:600;border-bottom:2px solid rgba(255,255,255,.45);">(08) 8339 3333</a>, and your catering is arranged as part of the booking.</p>
     </div>
   </div>
 
@@ -618,9 +635,9 @@ footer a:hover{color:#fff;}
     <div class="wrap">
       <div class="cgrid">
         <div>
-          <h2 class="big">Get in touch</h2>
+          <h2 class="big">Talk to us</h2>
           <div class="copy">
-            <p>Camping at Woodhouse? Catering can also be arranged through the Woodhouse office on <a href="tel:0883393333" style="color:var(--red);font-weight:600;">(08) 8339 3333</a>.</p>
+            <p>School camps, retreats, corporate groups, community groups and one-off functions. If you are not sure whether we can do it, ask.</p>
           </div>
           <div class="cnums">
             <div class="cnum"><b>Kel</b><a href="tel:0430165007">0430 165 007</a></div>
@@ -631,28 +648,27 @@ footer a:hover{color:#fff;}
         </div>
         <div class="form">
           <div id="fields">
-            <h3>Camp enquiry</h3>
+            <h3>Catering enquiry</h3>
             <div class="sub">The more you tell us, the more useful our reply.</div>
             <div id="err" class="err">That did not send. Try again, or call Kel on 0430 165 007.</div>
             <div class="frow">
               <div class="fg"><label for="f-first">First name *</label><input type="text" id="f-first" placeholder="First name"></div>
               <div class="fg"><label for="f-last">Last name *</label><input type="text" id="f-last" placeholder="Last name"></div>
             </div>
-            <div class="fg"><label for="f-org">School or group</label><input type="text" id="f-org" placeholder="e.g. Stirling East Primary"></div>
             <div class="frow">
               <div class="fg"><label for="f-phone">Phone *</label><input type="tel" id="f-phone" placeholder="04XX XXX XXX"></div>
               <div class="fg"><label for="f-email">Email *</label><input type="email" id="f-email" placeholder="you@example.com"></div>
             </div>
+            <div class="fg"><label for="f-org">Group or organisation</label><input type="text" id="f-org" placeholder="School, club, business or family name"></div>
             <div class="frow">
-              <div class="fg"><label for="f-date-start">Camp starts</label><input type="date" id="f-date-start"></div>
-              <div class="fg"><label for="f-date-end">Camp ends</label><input type="date" id="f-date-end"></div>
+              <div class="fg"><label for="f-date-start">Date</label><input type="date" id="f-date-start"></div>
+              <div class="fg"><label for="f-date-end">Until (if more than a day)</label><input type="date" id="f-date-end"></div>
             </div>
             <div class="frow">
-              <div class="fg"><label for="f-guests">Students</label><input type="number" id="f-guests" placeholder="e.g. 60" min="1"></div>
-              <div class="fg"><label for="f-staff">Adults and staff</label><input type="number" id="f-staff" placeholder="e.g. 8" min="0"></div>
+              <div class="fg"><label for="f-guests">How many people?</label><input type="number" id="f-guests" placeholder="e.g. 40" min="1"></div>
+              <div class="fg"><label for="f-venue">Where?</label><input type="text" id="f-venue" placeholder="Suburb or venue"></div>
             </div>
-            <div class="fg"><label for="f-venue">Where is the camp?</label><input type="text" id="f-venue" placeholder="Woodhouse, or another site"></div>
-            <div class="fg"><label for="f-msg">Dietary requirements and anything else</label><textarea id="f-msg" placeholder="Allergies, gluten free, vegetarian, the fussy ones, and anything else we should know."></textarea></div>
+            <div class="fg"><label for="f-msg">What do you need? *</label><textarea id="f-msg" placeholder="Which meals, the style of food you are after, any dietary requirements and allergies, and anything else we should know."></textarea></div>
             <button class="send" id="send" onclick="submitForm()">Send enquiry</button>
           </div>
           <div class="done" id="done">
@@ -754,7 +770,6 @@ async function submitForm(){
   var dStart = document.getElementById("f-date-start").value;
   var dEnd = document.getElementById("f-date-end").value;
   var guests = document.getElementById("f-guests").value;
-  var staff = document.getElementById("f-staff").value;
   var venue = v("f-venue"), msg = v("f-msg");
   var err = document.getElementById("err");
   var btn = document.getElementById("send");
@@ -763,6 +778,11 @@ async function submitForm(){
 
   if (!first || !phone || !email) {
     err.textContent = "Please add your name, phone and email so we can reply.";
+    err.style.display = "block";
+    return;
+  }
+  if (!msg) {
+    err.textContent = "Please tell us what you need so we can quote it properly.";
     err.style.display = "block";
     return;
   }
@@ -778,17 +798,16 @@ async function submitForm(){
       headers: { "Content-Type": "application/json", "Accept": "application/json" },
       body: JSON.stringify({
         "_replyto": email,
-        "_subject": "New camp enquiry from " + first + " " + last,
+        "_subject": "Catering enquiry from " + first + " " + last,
         "First Name": first,
         "Last Name": last,
-        "School / Group": org || "Not specified",
+        "Group / Organisation": org || "Not specified",
         "Phone": phone,
         "Email": email,
-        "Camp Dates": dates,
-        "Students": guests || "Not specified",
-        "Adults / Staff": staff || "Not specified",
-        "Camp Location": venue || "Not specified",
-        "Dietary / Notes": msg || "No message provided"
+        "Dates": dates,
+        "How many people": guests || "Not specified",
+        "Location": venue || "Not specified",
+        "What they need": msg
       })
     });
     if (!res.ok) throw new Error("failed");
